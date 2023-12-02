@@ -73,25 +73,25 @@ skills:
         percent: 100
         icon: ''
         icon_packs: ''
-  - name: Hobbies
-    color: '#eeac02'
-    color_border: '#f0bf23'
-    items:
-      - name: Jogging
-        description: ''
-        percent: 100
-        icon: person-hiking
-        icon_pack: fas
-      - name: Reading
-        description: ''
-        percent: 100
-        icon: book
-        icon_pack: fas
-      - name: Cooking
-        description: ''
-        percent: 100
-        icon: camera-retro
-        icon_pack: fas
+#   - name: Hobbies
+#     color: '#eeac02'
+#     color_border: '#f0bf23'
+#     items:
+#       - name: Jogging
+#         description: ''
+#         percent: 100
+#         icon: person-hiking
+#         icon_pack: fas
+#       - name: Reading
+#         description: ''
+#         percent: 100
+#         icon: book
+#         icon_pack: fas
+#       - name: Cooking
+#         description: ''
+#         percent: 100
+#         icon: camera-retro
+#         icon_pack: fas
 
 # Social/Academic Networking
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
@@ -101,21 +101,21 @@ social:
   - icon: envelope
     icon_pack: fas
     link: '/#contact'
-  - icon: twitter
-    icon_pack: fab
-    link: https://twitter.com/GeorgeCushen
-    label: Follow me on Twitter
-    display:
-      header: true
+#   - icon: twitter
+#     icon_pack: fab
+#     link: https://twitter.com/GeorgeCushen
+#     label: Follow me on Twitter
+#     display:
+#       header: true
   - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
     icon_pack: fas
-    link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+    link: https://scholar.google.com/citations?user=xZ6kgDkAAAAJ&hl=en
   - icon: github
     icon_pack: fab
-    link: https://github.com/gcushen
+    link: https://github.com/hussein88al88amouri
   - icon: linkedin
     icon_pack: fab
-    link: https://www.linkedin.com/
+    link: https://www.linkedin.com/in/hussein-el-amouri-0b24a0165/
   # Link to a PDF of your resume/CV.
   # To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.yaml`,
   # and uncomment the lines below.
