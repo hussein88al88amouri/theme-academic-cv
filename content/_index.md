@@ -6,7 +6,7 @@ type: landing
 
 sections:
   - block: hero
-    demo: false # Only display this section in the Hugo Blox Builder demo site
+    demo: true # Only display this section in the Hugo Blox Builder demo site
     content:
       title: Hugo Academic Theme
       image:
@@ -54,12 +54,12 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
-        - title: CEO
-          company: GenCoin
+        - title: Post-Doc (researcher assistant)
+          company: ICube Laboratory
           company_url: ''
           company_logo: org-gc
-          location: California
-          date_start: '2021-01-01'
+          location: Illkirch-Grafenstadden
+          date_start: '2023-10-01'
           date_end: ''
           description: |2-
               Responsibilities include:
@@ -67,22 +67,39 @@ sections:
               * Analysing
               * Modelling
               * Deploying
-        - title: Professor of Semiconductor Physics
-          company: University X
+        - title: Ph.D. Candidate
+          company: University of Strasbourg
           company_url: ''
           company_logo: org-x
-          location: California
-          date_start: '2016-01-01'
-          date_end: '2020-12-31'
-          description: Taught electronic engineering and researched semiconductor physics.
-    design:
+          location: Strasbourg
+          date_start: '2020-10-01'
+          date_end: '2023-09-30'
+          description: ''
+        - title: lecturer
+          company: University of Strasbourg
+          company_url: ''
+          company_logo: org-x
+          location: Strasbourg
+          date_start: '2021-10-01'
+          date_end: ''
+          description: ''
+        - title: Machine Learning Intern
+          company: GIPSA Laboratroy, Grenoble INP-Phelma University
+          company_url: ''
+          company_logo: org-x
+          location: Grenoble
+          date_start: '2020-03-01'
+          date_end: '2021-09-30'
+          description: ''
+
+design:
       columns: '2'
   - block: skills
     content:
       title: Skills
       text: ''
       # Choose a user to display skills from (a folder name within `content/authors/`)
-      username: admin
+      username: helamouri
     design:
       columns: '1'
   - block: accomplishments
