@@ -1,7 +1,7 @@
 ---
-title: "An example journal article"
+title: "	Constrained DTW preserving shapelets for explainable time-series clustering"
 authors:
-- admin
+- Hussein El Amouri
 - Robert Ford
 author_notes:
 - "Equal contribution"
@@ -21,7 +21,7 @@ publication_types: ["article-journal"]
 publication: "*Journal of Source Themes, 1*(1)"
 publication_short: ""
 
-abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
+abstract: The analysis of time series is becoming ever more popular due to the proliferation of sensors. A well-known similarity measure for time-series is Dynamic Time Warping (DTW), which does not respect the axioms of a metric. These, however, can be reintroduced through Learning DTW-Preserving Shapelets (LDPS). This article extends LDPS and presents constrained DTW-preserving shapelets (CDPS). CDPS directs the time-series representation to captures the user’s interpretation of the data by considering a limited amount of user knowledge in the from of must-link- cannot link constraints. Subsequently, unconstrained algorithms can be used to generate a clustering that respects the constraints without explicit knowledge of them. Out-of-sample data can be transformed into this space, overcoming the limitations of traditional transductive constrained-clustering algorithms. Furthermore, several Shapelet Cluster Explanation (SCE) approaches are proposed that explain the clustering and can simplify the representation while preserving clustering performance. State-of-the-art performance is demonstrated on multiple time-series datasets and an open-source implementation will be made publicly available upon acceptance.
 
 # Summary. An optional shortened abstract.
 summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
@@ -33,8 +33,8 @@ featured: false
 # links:
 # - name: ""
 #   url: ""
-url_pdf: http://arxiv.org/pdf/1512.04133v1
-url_code: 'https://github.com/HugoBlox/hugo-blox-builder'
+url_pdf: https://hal.science/hal-04171112/file/CDPS_PatternRecognition_final.pdf
+url_code: 'https://github.com/hussein88al88amouri/Learning-Explainable-Constrained-Transformation-For-Time-Series-Data'
 url_dataset: ''
 url_poster: ''
 url_project: ''
@@ -45,7 +45,7 @@ url_video: ''
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/jdD8gXaTZsc)'
+  caption: "" # 'Image credit: [**Unsplash**](https://unsplash.com/photos/jdD8gXaTZsc)'
   focal_point: ""
   preview_only: false
 
