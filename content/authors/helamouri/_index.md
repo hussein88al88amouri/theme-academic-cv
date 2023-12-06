@@ -71,8 +71,8 @@ skills:
       - name: C/C++
         description: ''
         percent: 100
-        icon: ''
-        icon_packs: ''
+        icon: cat
+        icon_packs: fas
 #   - name: Hobbies
 #     color: '#eeac02'
 #     color_border: '#f0bf23'
@@ -100,7 +100,7 @@ skills:
 social:
   - icon: envelope
     icon_pack: fas
-    link: alamourihusein@gmail.com
+    link: '#/contact'
 #   - icon: twitter
 #     icon_pack: fab
 #     link: https://twitter.com/GeorgeCushen
