@@ -1,5 +1,5 @@
 ---
-title: "	Constrained DTW preserving shapelets for explainable time-series clustering"
+title: "Constrained DTW preserving shapelets for explainable time-series clustering"
 authors:
 - Hussein El Amouri
 - Robert Ford
@@ -45,7 +45,7 @@ url_video: ''
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 image:
-  caption: "" # 'Image credit: [**Unsplash**](https://unsplash.com/photos/jdD8gXaTZsc)'
+  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/jdD8gXaTZsc)'
   focal_point: ""
   preview_only: false
 
