@@ -91,9 +91,8 @@ sections:
           date_start: '2020-03-01'
           date_end: '2021-09-30'
           description: ''
-
-design:
-      columns: '2'
+    design:
+          columns: '2'
   - block: skills
     content:
       title: Skills
