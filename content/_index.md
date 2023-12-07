@@ -92,7 +92,7 @@ sections:
           date_end: '2021-09-30'
           description: ''
     design:
-          columns: '2'
+      columns: '2'
   - block: skills
     content:
       title: Skills
