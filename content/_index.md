@@ -29,7 +29,7 @@ sections:
           company_logo: org-gc
           location: Illkirch-Grafenstadden
           date_start: '2023-10-01'
-          date_end: ong-goin\g
+          date_end: ''
           description: |2-
               Responsibilities include:
               * Investigating different approaches for constraint proposition in constrained clustering. Based on works from active learning and pseudo-labeling
