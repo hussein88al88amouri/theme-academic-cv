@@ -80,7 +80,7 @@ skills:
         icon_packs: fas
       - name: Assembly
         description: ''
-        percent: 100
+        # percent: 100
         icon: 
         icon_packs: fas
 #   - name: Hobbies
