@@ -27,7 +27,7 @@ sections:
         - title: Post-Doc (researcher assistant)
           company: ICube Laboratory
           company_url: ''
-          company_logo: org-gc
+          company_logo: 3ik62901
           location: Illkirch-Grafenstadden
           date_start: '2023-10-01'
           date_end: ''
