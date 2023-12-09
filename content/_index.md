@@ -27,7 +27,7 @@ sections:
         - title: Post-Doc (researcher assistant)
           company: ICube Laboratory
           company_url: ''
-          company_logo: logo_stras
+          company_logo: logo_icube
           location: Illkirch-Grafenstadden
           date_start: '2023-10-01'
           date_end: ''
@@ -39,7 +39,7 @@ sections:
         - title: Ph.D. Candidate
           company: University of Strasbourg
           company_url: ''
-          company_logo: org-x
+          company_logo: logo_stras
           location: Strasbourg
           date_start: '2020-10-01'
           date_end: '2023-09-30'
@@ -47,7 +47,7 @@ sections:
         - title: lecturer
           company: University of Strasbourg
           company_url: ''
-          company_logo: org-x
+          company_logo: logo_stras
           location: Strasbourg
           date_start: '2021-10-01'
           date_end: ''
@@ -55,7 +55,7 @@ sections:
         - title: Machine Learning Intern
           company: GIPSA Laboratroy, Grenoble INP-Phelma University
           company_url: ''
-          company_logo: org-x
+          company_logo: logo_gipsa
           location: Grenoble
           date_start: '2020-03-01'
           date_end: '2021-09-30'
