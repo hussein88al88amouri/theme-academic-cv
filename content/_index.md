@@ -105,10 +105,13 @@ sections:
       buttons:
         - name: All
           tag: '*'
-        - name: Deep Learning
-          tag: Deep Learning
-        - name: Other
-          tag: Demo
+        - name: Constrained DTW Preserving Shapelets - CDPS
+          tag: CDPS
+        - name: Shapelet Cluster Expalanation - SCE
+          tag: SCE
+        - name: Evaluating the Extrapolation Capabilities of Neural Vocoders to Extreme Pitch Values
+          tage: EEV
+          
     design:
       # Choose how many columns the section has. Valid values: '1' or '2'.
       columns: '1'
