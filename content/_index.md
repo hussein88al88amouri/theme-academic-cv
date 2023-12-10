@@ -8,7 +8,7 @@ sections:
   # Hero
   - block: hero
     content:
-      text: "\n<!--GitHub Button JS-->\n<script async defer src=\"https://buttons.github.io/buttons.js\"></script>"
+      text: ""
       title: 
     design:
       background:
