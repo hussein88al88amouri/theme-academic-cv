@@ -216,14 +216,14 @@ sections:
       # Contact (add or remove contact options as necessary)
       email: alamourihusein@gmail.com
       # phone: 888 888 88 88
-      appointment_url: 'https://calendly.com'
-      address:
-        # street: 450 Serra Mall
-        city: Strasbourg
-        region: Bhas-Rhin
-        postcode: '67000'
-        country: France
-        country_code: FR
+      # appointment_url: 'https://calendly.com'
+      # address:
+      #   # street: 450 Serra Mall
+      #   city: Strasbourg
+      #   region: Bhas-Rhin
+      #   postcode: '67000'
+      #   country: France
+      #   country_code: FR
       # directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
       # office_hours:
       #   - 'Monday 10:00 to 13:00'
@@ -235,7 +235,7 @@ sections:
       contact_links:
           - icon: linkedin
             icon_pack: fab
-            name: DM me
+            name: Follow me
             link: 'https://www.linkedin.com/in/hussein-el-amouri-0b24a0165/'
       #   - icon: twitter
       #     icon_pack: fab
@@ -245,10 +245,10 @@ sections:
       #     icon_pack: fab
       #     name: Skype Me
       #     link: 'skype:echo123?call'
-          - icon: video
-            icon_pack: fas
-            name: Zoom Me
-            link: 'https://zoom.com'
+          # - icon: video
+          #   icon_pack: fas
+            # name: Zoom Me
+            # link: 'https://zoom.com'
       # # Automatically link email and phone or display as text?
       autolink: true
       # Email form provider
