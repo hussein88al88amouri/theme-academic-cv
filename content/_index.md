@@ -148,11 +148,11 @@ sections:
       buttons:
         - name: All
           tag: '*'
-        - name: Constrained DTW Preserving Shapelets - CDPS
+        - name: CDPS
           tag: CDPS
-        - name: Shapelet Cluster Expalanation - SCE
+        - name: SCE
           tag: SCE
-        - name: Evaluating the Extrapolation Capabilities of Neural Vocoders to Extreme Pitch Values
+        - name: Evaluating Neural Vocoders
           tage: EEV
 
     design:
