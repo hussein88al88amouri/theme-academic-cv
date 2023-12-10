@@ -36,8 +36,8 @@ sections:
         # image:
         #   filename: icon.jpg
         size: cover
-        gradient_end: '#f9f6fd2'
-        gradient_start: '#004ba0'
+        gradient_end: '#f0f0f00'
+        gradient_start: '#0f4ba0'
         text_color_light: true
 
   - block: about.biography
