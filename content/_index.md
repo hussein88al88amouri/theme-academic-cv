@@ -5,6 +5,20 @@ date: 2022-10-24
 type: landing
 
 sections:
+  # Hero
+  - block: hero
+    content:
+      text: "\n<!--GitHub Button JS-->\n<script async defer src=\"https://buttons.github.io/buttons.js\"></script>"
+      title: 
+    design:
+      background:
+        filters:
+          brightness: 1
+        image:
+          filename: icon.jpg
+        size: cover
+        text_color_light: true
+
   - block: about.biography
     id: about
     content:
@@ -111,7 +125,7 @@ sections:
           tag: SCE
         - name: Evaluating the Extrapolation Capabilities of Neural Vocoders to Extreme Pitch Values
           tage: EEV
-          
+
     design:
       # Choose how many columns the section has. Valid values: '1' or '2'.
       columns: '1'
