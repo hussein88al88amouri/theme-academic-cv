@@ -6,18 +6,18 @@ type: landing
 
 sections:
   # Hero
-  - block: hero
-    content:
-      text: ""
-      title: 
-    design:
-      background:
-        filters:
-          brightness: 1
-        image:
-          filename: icon.jpg
-        size: cover
-        text_color_light: true
+  # - block: hero
+  #   content:
+  #     text: ""
+  #     title: 
+  #   design:
+  #     background:
+  #       filters:
+  #         brightness: 1
+  #       image:
+  #         filename: icon.jpg
+  #       size: cover
+  #       text_color_light: true
 
   - block: about.biography
     id: about
