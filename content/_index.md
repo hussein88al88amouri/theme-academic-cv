@@ -9,8 +9,8 @@ sections:
     demo: false # Only display this section in the Hugo Blox Builder demo site
     content:
       title: Portoflio
-      # image:
-        # filename: icon.png
+      image:
+        filename: icon.png
       # cta:
       #   label: '**Get Started**'
       #   url: https://hugoblox.com/templates/
@@ -33,11 +33,11 @@ sections:
       background:
         # filters:
         #   brightness: 1
-        image:
-          filename: icon.jpg
-        size: cover
-        # gradient_end: '#1976d2'
-        # gradient_start: '#004ba0'
+        # image:
+        #   filename: icon.jpg
+        # size: cover
+        gradient_end: '#1976d2'
+        gradient_start: '#004ba0'
         text_color_light: true
 
   - block: about.biography
