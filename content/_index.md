@@ -30,6 +30,11 @@ sections:
       #   <script async defer src="https://buttons.github.io/buttons.js"></script>
     design:
       background:
+        filters:
+          brightness: 1
+        image:
+          filename: icon.jpg
+        size: cover
         gradient_end: '#1976d2'
         gradient_start: '#004ba0'
         text_color_light: true
