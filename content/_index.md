@@ -31,8 +31,8 @@ sections:
       #   <script async defer src="https://buttons.github.io/buttons.js"></script>
     design:
       background:
-        filters:
-          brightness: 1
+        # filters:
+        #   brightness: 1
         image:
           filename: icon.jpg
         size: cover
