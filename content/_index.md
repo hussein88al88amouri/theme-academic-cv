@@ -32,14 +32,17 @@ sections:
       #   <script async defer src="https://buttons.github.io/buttons.js"></script>
     design:
       background:
-        # filters:
-        #   brightness: 1
-        # image:
-        #   filename: icon.jpg
-        size: cover
-        gradient_end: '#f010500'
-        gradient_start: '#0f4ba0'
-        text_color_light: true
+        image:
+          filename: icon.jpg
+          filters:
+            brightness: 1
+          size: cover
+          position: center
+          parallax: true
+          text_color_light: true
+        # gradient_end: '#f010500'
+        # gradient_start: '#0f4ba0'
+        # text_color_light: true
 
   - block: about.biography
     id: about
