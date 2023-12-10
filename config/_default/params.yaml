@@ -6,8 +6,8 @@
 # Appearance
 
 appearance:
-  theme_day: minimal
-  theme_night: minimal
+  theme_day: tryps
+  theme_night: tryps
   font: minimal
   font_size: L
 
@@ -74,7 +74,7 @@ features:
     content_dir: content
     branch: main
   avatar:
-    gravatar: true
+    gravatar: false
     shape: circle
   comment:
     provider: ''
