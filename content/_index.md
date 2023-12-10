@@ -7,10 +7,10 @@ type: landing
 sections:
   - block: hero
     demo: false # Only display this section in the Hugo Blox Builder demo site
-    content:
-      title: Resume
-      image:
-        filename: icon.png
+    # content:
+      # title: Resume
+      # image:
+        # filename: icon.png
       # cta:
       #   label: '**Get Started**'
       #   url: https://hugoblox.com/templates/
@@ -35,8 +35,8 @@ sections:
         image:
           filename: icon.jpg
         size: cover
-        gradient_end: '#1976d2'
-        gradient_start: '#004ba0'
+        # gradient_end: '#1976d2'
+        # gradient_start: '#004ba0'
         text_color_light: true
 
   - block: about.biography
