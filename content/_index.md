@@ -10,6 +10,7 @@ sections:
     content:
       title: Portoflio
       image:
+        size: cover
         filename: icon.png
       # cta:
       #   label: '**Get Started**'
