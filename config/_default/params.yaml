@@ -18,10 +18,10 @@ marketing:
     site_type: Person
     local_business_type: ''
     org_name: ''
-    description: ''
+    description: 'Portfolio'
     twitter: ''
   analytics:
-    google_analytics: ''
+    google_analytics: 'G-KYRM847805'
     baidu_tongji: ''
     google_tag_manager: ''
     microsoft_clarity: ''
@@ -70,7 +70,7 @@ features:
   privacy_pack:
     enable: false
   repository:
-    url: 'https://github.com/<username>/<repository>'
+    url: 'https://github.com/hussein88al88amouri/theme-academic-cv/'
     content_dir: content
     branch: main
   avatar:
@@ -114,3 +114,6 @@ extensions:
 security:
   # Allow frame for embedding speaker notes in slides
   allow_frame: true
+  
+# Remove powered by footer legend
+i_am_a_sponsor: true
