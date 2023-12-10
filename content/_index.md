@@ -1,8 +1,8 @@
 ---
 # Leave the homepage title empty to use the site title
-title: ''
+# title: ''
 date: 2022-10-24
-type: landing
+# type: landing
 
 sections:
   - block: hero
@@ -37,7 +37,7 @@ sections:
         # image:
         #   filename: icon.jpg
         size: cover
-        gradient_end: '#f0f0f00'
+        gradient_end: '#f010500'
         gradient_start: '#0f4ba0'
         text_color_light: true
 
