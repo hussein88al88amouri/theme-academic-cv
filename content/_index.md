@@ -261,11 +261,11 @@ sections:
       # coordinates:
       #   latitude: '37.4275'
       #   longitude: '-122.1697'  
-      # contact_links:
-      #     - icon: linkedin
-      #       icon_pack: fab
-      #       name: Follow me
-      #       link: 'https://www.linkedin.com/in/hussein-el-amouri-0b24a0165/'
+      contact_links:
+          - icon: linkedin
+            icon_pack: fab
+            name: Follow me
+            link: 'https://www.linkedin.com/in/hussein-el-amouri-0b24a0165/'
       #   - icon: twitter
       #     icon_pack: fab
       #     name: DM Me
