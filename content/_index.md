@@ -9,9 +9,9 @@ sections:
     # demo: false # Only display this section in the Hugo Blox Builder demo site
     content:
       title: Portoflio
-      image:
-        size: cover
-        filename: icon.png
+      # image:
+      #   size: cover
+      #   filename: icon.png
       # cta:
       #   label: '**Get Started**'
       #   url: https://hugoblox.com/templates/
