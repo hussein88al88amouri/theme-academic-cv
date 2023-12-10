@@ -4,7 +4,7 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: Hussein El Amouri # Website name
-baseURL: 'https://hussein-el-amouri.netlify.app/' # Website URL
+baseURL: 'https://github.com/hussein88al88amouri/theme-academic-cv/' # Website URL
 
 ############################
 ## LANGUAGE
