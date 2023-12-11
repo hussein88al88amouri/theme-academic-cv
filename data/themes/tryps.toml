@@ -3,7 +3,7 @@ name = "tryps"
 
 [light]
     # Primary
-    primary = "#f8f9fa"  # Light gray
+    primary = "#222222"  # Light gray
 
     # Menu
     menu_primary = "#ffffff"  # Dark black
@@ -12,7 +12,7 @@ name = "tryps"
     menu_title = "#333333"  # Slightly lighter black title
 
     # Home sections
-    home_section_odd = "#F0F0F0"  # Very light gray
+    home_section_odd = "#303030"  # Very light gray
     home_section_even = "#FFFFFF"  # White
 
 
