@@ -6,7 +6,7 @@ name = "tryps"
     primary = "#f8f9fa"  # Light gray
 
     # Menu
-    menu_primary = "#111111"  # Dark black
+    menu_primary = "#ffffff"  # Dark black
     menu_text = "#333333"  # Slightly lighter black text
     menu_text_active = "#000000"  # Black for active text
     menu_title = "#333333"  # Slightly lighter black title
