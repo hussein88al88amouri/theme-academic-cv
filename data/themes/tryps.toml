@@ -13,7 +13,7 @@ name = "tryps"
 
     # Home sections
     home_section_odd = "#F5F5F5"  # Very light gray
-    home_section_even = "#FFFFFF"  # White
+    home_section_even = "#FFF000"  # White
 
 
 [dark]
