@@ -6,10 +6,10 @@ name = "tryps"
     primary = "#222222"  # Light gray
 
     # Menu
-    menu_primary = "#ffffff"  # Dark black
-    menu_text = "#333333"  # Slightly lighter black text
+    menu_primary = "#ffffff"  # White
+    menu_text = "#333333"  # Dark gray text
     menu_text_active = "#000000"  # Black for active text
-    menu_title = "#333333"  # Slightly lighter black title
+    menu_title = "#333333"  # Dark gray title
 
     # Home sections
     home_section_odd = "#F5F5F5"  # Very light gray
@@ -18,6 +18,6 @@ name = "tryps"
 
 [dark]
     # Primary 
-primary = "#efefef"  # Black
-link = "#f9f9f0"  # Black
-link_hover = "#f0f0f0"  # Black
+primary = "#efefef"  # Light gray
+link = "#f9f9f0"  # Light gray
+link_hover = "#f0f0f0"  # Light gray
