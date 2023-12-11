@@ -1,0 +1,11 @@
+# font style metadata
+name = "tryps"
+
+# optional google font URL
+google_fonts = "family=Cookie&family=Open+Sans:ital,wght@0,400;0,700;1,400&family=PT+Mono&family=Play:wght@400;700"
+
+# font families
+heading_font = "Play"
+body_font = "Open Sans"
+nav_font = "Open Sans"
+mono_font = "PT Mono"
