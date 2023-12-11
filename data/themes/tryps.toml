@@ -3,21 +3,20 @@ name = "tryps"
 
 [light]
     # Primary
-    primary = "#2c3e50"  # Dark blue-gray
+    primary = "#69870E"
 
     # Menu
-    menu_primary = "#f8f9fa" # Light gray
-    menu_text = "#f8e8f1" # Light gray text
-    menu_text_active = "#2ecc71" # Dark green-blue for active text
-    menu_title = "#e8e8e8" # Light gray title
+    menu_primary = "#7DA211"
+    menu_text = "#024452"
+    menu_text_active = "#2962ff"
+    menu_title = "#024452"
 
     # Home sections
-    home_section_odd = "#fffff1"  # Light gray
-    home_section_even = "#bdc3c7"  # Slightly darker gray
-    home_section_text = "#2c3e50"  # Dark blue-gray text
+    home_section_odd = "rgb(255, 255, 255)"
+    home_section_even = "rgb(247, 247, 247)"
 
 [dark]
     # Primary 
-    primary = "#546e7a"  # A cool grayish-blue
-    link = "#78909c"  # A bit lighter than the primary
-    link_hover = "#455a64"  # Darker on hover
+    primary = "#bbdefb"
+    link = "#bbdefb"
+    link_hover = "#bbdefb"
