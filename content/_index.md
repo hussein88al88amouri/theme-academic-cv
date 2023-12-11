@@ -8,7 +8,7 @@ sections:
   - block: hero
     # demo: false # Only display this section in the Hugo Blox Builder demo site
     content:
-      title: Portoflio
+      title: 
       image:
         size: cover
         filename: icon.png
