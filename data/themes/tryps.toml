@@ -7,12 +7,12 @@ name = "tryps"
 
     # Menu
     menu_primary = "#f8f9fa" # Light gray
-    menu_text = "#e8e8e8" # Light gray text
+    menu_text = "#f8e8f1" # Light gray text
     menu_text_active = "#2ecc71" # Dark green-blue for active text
     menu_title = "#e8e8e8" # Light gray title
 
     # Home sections
-    home_section_odd = "#ecf0f1"  # Light gray
+    home_section_odd = "#fffff1"  # Light gray
     home_section_even = "#bdc3c7"  # Slightly darker gray
     home_section_text = "#2c3e50"  # Dark blue-gray text
 
