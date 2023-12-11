@@ -1,10 +1,8 @@
 ---
 title: "Constrained DTW preserving shapelets for explainable time-series clustering"
 authors:
-- Hussein El Amouri
-- Thomas Lampert
-- Peirre Gancraski
-- Clement Mallet
+- helamouri
+
 author_notes:
 - ""
 - ""
