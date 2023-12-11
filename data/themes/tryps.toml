@@ -12,12 +12,12 @@ name = "tryps"
     menu_title = "#333333"  # Slightly lighter black title
 
     # Home sections
-    home_section_odd = "#F5F000"  # Very light gray
+    home_section_odd = "#F0F0F0"  # Very light gray
     home_section_even = "#FFFFFF"  # White
 
 
 [dark]
     # Primary 
-    primary = "#bbdefb"
-    link = "#bbdefb"
-    link_hover = "#bbdefb"
+primary = "#000000"  # Black
+link = "#000000"  # Black
+link_hover = "#000000"  # Black
