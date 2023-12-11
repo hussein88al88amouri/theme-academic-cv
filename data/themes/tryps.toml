@@ -3,17 +3,18 @@ name = "tryps"
 
 [light]
     # Primary
-    primary = "#69870E"
+    primary = "#f8f9fa"  # Light gray
 
     # Menu
-    menu_primary = "#7DA211"
-    menu_text = "#024452"
-    menu_text_active = "#2962ff"
-    menu_title = "#024452"
+    menu_primary = "#d3d3d3"  # Gray
+    menu_text = "#424242"  # Dark gray text
+    menu_text_active = "#000000"  # Black for active text
+    menu_title = "#424242"  # Dark gray title
 
     # Home sections
-    home_section_odd = "rgb(255, 255, 255)"
-    home_section_even = "rgb(247, 247, 247)"
+    home_section_odd = "#f8f8f8"  # Very light gray
+    home_section_even = "#e8e8e8"  # Light gray
+
 
 [dark]
     # Primary 
