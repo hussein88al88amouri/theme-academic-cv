@@ -14,6 +14,7 @@ name = "tryps"
     # Home sections
     home_section_odd = "#ecf0f1"  # Light gray
     home_section_even = "#bdc3c7"  # Slightly darker gray
+    home_section_text = "#2c3e50"  # Dark blue-gray text
 
 [dark]
     # Primary 
