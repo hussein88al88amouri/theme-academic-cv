@@ -22,12 +22,12 @@ name = "tryps"
     link_hover = "#f0f0f0"  # Light gray
 
     # Menu
-    menu_primary = "#0f0f0f"  # Dark gray
-    menu_text = "#303030"  # Slightly lighter dark gray text
-    menu_text_active = "#000000"  # Black for active text
-    menu_title = "#3f3f3f"  # Slightly lighter dark gray title
+    # menu_primary = "#0f0f0f"  # Dark gray
+    # menu_text = "#303030"  # Slightly lighter dark gray text
+    # menu_text_active = "#000000"  # Black for active text
+    # menu_title = "#3f3f3f"  # Slightly lighter dark gray title
 
     # Home sections
-    home_section_odd = "#F5F5F5"  # Very light gray
-    home_section_even = "#FFFFFF"  # White
+    # home_section_odd = "#F5F5F5"  # Very light gray
+    # home_section_even = "#FFFFFF"  # White
 
