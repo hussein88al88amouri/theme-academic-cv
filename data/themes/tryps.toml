@@ -18,6 +18,6 @@ name = "tryps"
 
 [dark]
     # Primary 
-primary = "#efefef"  # Light gray
+primary = "#cfcfcf"  # Light gray
 link = "#f9f9f0"  # Light gray
 link_hover = "#f0f0f0"  # Light gray
