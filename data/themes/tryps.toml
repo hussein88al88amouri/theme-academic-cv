@@ -19,7 +19,7 @@ name = "tryps"
     # Primary 
     primary = "#eFeFeF"  # Light gray
     link = "#F9F9F0"  # Light gray
-    link_hover = "#FFFFFF"  # Light gray
+    link_hover = "#000000"  # Light gray
 
     # Menu
     # menu_primary = "#0f0f0f"  # Dark gray
