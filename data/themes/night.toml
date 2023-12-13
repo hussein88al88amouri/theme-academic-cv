@@ -7,13 +7,13 @@ name="night"
 
     # Menu
     menu_primary="#000000"
-    menu_text="#eeeeee"
-    menu_text_active="#e0e0e0"
-    menu_title="#f2f2f2"
+    menu_text="#000000"
+    menu_text_active="#000000"
+    menu_title="#000000"
 
     # Home sections
-    home_section_odd="#010101"
-    home_section_even= "#252525"
+    home_section_odd="#000000"
+    home_section_even= "#000000"
 
-    link="#f1f1f1"
-    link_hover="#f3f3f3"
+    link="#000000"
+    link_hover="#000000"
