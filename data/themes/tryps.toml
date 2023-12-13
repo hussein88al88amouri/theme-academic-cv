@@ -9,18 +9,18 @@ name = "tryps"
     menu_primary = "#ffffff"
     menu_text = "#777777"
     menu_text_active = "#000000"
-    menu_title = "#333333"
+    menu_title = "#222222"
 
 
     # Home sections
-    home_section_odd = "#555555"
+    home_section_odd = "#777777"
     home_section_even = "#FFFFFF"
 
 [dark]
     # Primary 
     primary = "#FFFFFF"
-    link = "F00F00"
-    link_hover = "#2F2F21"
+    link = "FegFeg"
+    link_hover = "#03030303"
 
     # Home sections
     # home_section_odd = "#F5F5F5"  # Very light gray
