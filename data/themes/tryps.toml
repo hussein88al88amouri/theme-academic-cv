@@ -3,23 +3,24 @@ name = "tryps"
 
 [light]
     # Primary
-    primary = "#000000"  # Dark gray
+    primary = "#000000"  
 
     # Menu
-    menu_primary = "#ffffff"  # White
-    menu_text = "#333333"  # Slightly lighter gray text
-    menu_text_active = "#000000"  # Black for active text
-    menu_title = "#333333"  # Slightly lighter gray title
+    menu_primary = "#ffffff"
+    menu_text = "#333333"
+    menu_text_active = "#000000"
+    menu_title = "#333333"
+
 
     # Home sections
-    home_section_odd = "#F0F0F0"  # Very light gray
-    home_section_even = "#FFFFFF"  # White
+    home_section_odd = "#000000"
+    home_section_even = "#FFFFFF"
 
 [dark]
     # Primary 
-    primary = "#000000"  # Light gray
-    link = "FFFFFF"  # Light gray
-    link_hover = "#0F0F00"  # Light gray
+    primary = "#000000"
+    link = "FFFFFF"
+    link_hover = "#0F0F00"
 
     # Home sections
     # home_section_odd = "#F5F5F5"  # Very light gray
