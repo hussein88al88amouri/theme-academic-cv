@@ -3,7 +3,7 @@ name="day"
 
 [light]
     # Primary
-    primary="#cccccc"
+    primary="#ffffff"
 
     # Menu
     menu_primary="#ffffff"
