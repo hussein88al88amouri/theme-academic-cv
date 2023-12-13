@@ -3,7 +3,7 @@ name = "tryps"
 
 [light]
     # Primary
-    primary = "#eeeeee"
+    primary = "#cccccc"
 
     # Menu
     menu_primary = "#f5f5f5"
