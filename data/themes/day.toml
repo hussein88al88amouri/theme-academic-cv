@@ -6,7 +6,7 @@ name="day"
     primary="#cccccc"
 
     # Menu
-    menu_primary="#f5f5f5"
+    menu_primary="#ffffff"
     menu_text="#f0f0f0"
     menu_text_active="#cfcfcf"
     menu_title="#202020"
