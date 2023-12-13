@@ -3,7 +3,7 @@ name = "tryps"
 
 [light]
     # Primary
-    primary = "#555555"  # Dark gray
+    primary = "#000000"  # Dark gray
 
     # Menu
     menu_primary = "#ffffff"  # White
