@@ -6,10 +6,10 @@ name = "tryps"
     primary = "#FFFFFF"  
 
     # Menu
-    menu_primary = "#ffffff"
-    menu_text = "#777777"
-    menu_text_active = "#000000"
-    menu_title = "#222222"
+    menu_primary = "#f5f5f5"
+    menu_text = "#70707070"
+    menu_text_active = "#111111"
+    menu_title = "#202020"
 
 
     # Home sections
