@@ -6,7 +6,6 @@
 # Appearance
 
 appearance:
-  color: black
   theme_day: tryps
   theme_night: tryps
   font: tryps
