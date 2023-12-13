@@ -3,7 +3,7 @@ name = "tryps"
 
 [light]
     # Primary
-    primary = "#000000"  
+    primary = "#FFFFFF"  
 
     # Menu
     menu_primary = "#ffffff"
@@ -18,7 +18,7 @@ name = "tryps"
 
 [dark]
     # Primary 
-    primary = "#FFFFFF"
+    primary = "#000000"
     link = "111111"
     link_hover = "#03030303"
 
