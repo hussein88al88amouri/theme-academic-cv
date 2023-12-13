@@ -6,8 +6,9 @@
 # Appearance
 
 appearance:
-  theme_day: tryps
-  theme_night: tryps
+  theme_day: day
+  theme_night: night
+  theme_default: night
   font: tryps
   font_size: L
 
