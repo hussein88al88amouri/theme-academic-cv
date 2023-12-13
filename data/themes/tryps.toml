@@ -8,7 +8,7 @@ name = "tryps"
     # Menu
     menu_primary = "#f5f5f5"
     menu_text = "#20202020"
-    menu_text_active = "#001100"
+    menu_text_active = "#444444"
     menu_title = "#111111"
 
 
