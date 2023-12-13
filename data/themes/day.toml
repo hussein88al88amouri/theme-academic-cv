@@ -12,7 +12,7 @@ name="day"
     menu_title="#121212"
 
     # Home sections
-    home_section_odd="#f0fffe"
+    home_section_odd="#fffcff"
     home_section_even="#85aca9"
 
     link="#000000"
