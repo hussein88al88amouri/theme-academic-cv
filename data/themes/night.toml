@@ -13,7 +13,7 @@ name="night"
 
     # Home sections
     home_section_odd="#000000"
-    home_section_even= "#333333"
+    home_section_even= "#111111"
 
-    link="#555555"
-    link_hover="#888888"
+    link="#eeeeee"
+    link_hover="#ffffff"
