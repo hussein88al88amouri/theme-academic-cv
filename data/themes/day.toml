@@ -7,12 +7,12 @@ name="day"
 
     # Menu
     menu_primary="#ffffff"
-    menu_text="#555555"
+    menu_text="#797a7b"
     menu_text_active="#0e0e0e"
     menu_title="#121212"
 
     # Home sections
-    home_section_odd="#efefef"
+    home_section_odd="#f0fffe"
     home_section_even="#85aca9"
 
     link="#000000"
