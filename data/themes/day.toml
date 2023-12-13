@@ -7,13 +7,13 @@ name="day"
 
     # Menu
     menu_primary="#ffffff"
-    menu_text="#f0f0f0"
-    menu_text_active="#cfcfcf"
-    menu_title="#202020"
+    menu_text="#555555"
+    menu_text_active="#0e0e0e"
+    menu_title="#121212"
 
     # Home sections
-    home_section_odd="#e0e0e0"
+    home_section_odd="#efefef"
     home_section_even="#fefefe"
 
     link="#000000"
-    link_hover="#030303"
+    link_hover="#0f0f0f"
