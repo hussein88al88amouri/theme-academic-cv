@@ -20,7 +20,7 @@ marketing:
     local_business_type: ''
     org_name: ''
     description: 'Portfolio'
-    twitter: ''
+    # twitter: ''
   analytics:
     google_analytics: 'G-KYRM847805'
     baidu_tongji: ''
