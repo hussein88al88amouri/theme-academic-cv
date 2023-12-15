@@ -11,7 +11,7 @@ doi: "https://doi.org/10.21437/Interspeech.2021-1547"
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
 # Enter a publication type from the CSL standard.
-publication_types: ["article"]
+publication_types: ["paper-conference"]
 
 # Publication name and optional abbreviated publication name.
 publication: ""
@@ -22,7 +22,10 @@ abstract: Neural vocoders are systematically evaluated on homogeneous train and 
 # Summary. An optional shortened abstract.
 # summary: 
 tags:
-- Neural Vocoder, Voice Synthesis
+- Neural Vocoder
+- Speech Synthesis
+- Pitch Value
+- Unseen Data
 featured: false
 
 links:
@@ -40,7 +43,7 @@ url_video: ''
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/s9CC2SKySJM)'
+  caption: 'Speech synthesis general process.'
   focal_point: ""
   preview_only: false
 
