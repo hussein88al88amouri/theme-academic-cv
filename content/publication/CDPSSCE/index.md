@@ -6,7 +6,7 @@ title: "Constrained DTW preserving shapelets for explainable time-series cluster
 # author_notes:
 # - ""
 # - ""
-# date: "2023-09-01T00:00:00Z"
+date: "2023-09-01T00:00:00Z"
 doi: "https://doi.org/10.1016/j.patcog.2023.109804"
 
 # Schedule page publish date (NOT publication's date).
