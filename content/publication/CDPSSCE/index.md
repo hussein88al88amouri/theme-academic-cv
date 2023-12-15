@@ -35,7 +35,7 @@ featured: false
 #   url: ""
 url_pdf: https://hal.science/hal-04171112/file/CDPS_PatternRecognition_final.pdf
 url_code: 'https://github.com/hussein88al88amouri/Learning-Explainable-Constrained-Transformation-For-Time-Series-Data'
-url_dataset: ''
+url_dataset: 'https://www.timeseriesclassification.com/index.php'
 url_poster: ''
 url_project: ''
 url_slides: ''
