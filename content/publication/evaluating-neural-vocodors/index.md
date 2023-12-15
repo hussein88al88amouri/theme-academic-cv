@@ -22,13 +22,13 @@ abstract: Neural vocoders are systematically evaluated on homogeneous train and 
 # Summary. An optional shortened abstract.
 # summary: 
 tags:
-- Source Themes
+- Neural Vocoder, Voice Synthesis
 featured: false
 
 links:
 # - name: Custom Link
   # url: http://example.org
-url_pdf: https://doi.org/10.21437/Interspeech.2021-1547
+url_pdf: https://www.isca-speech.org/archive/pdfs/interspeech_2021/perrotin21_interspeech.pdf
 url_code: ''
 url_dataset: ''
 url_poster: ''
@@ -49,19 +49,19 @@ image:
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
-projects:
-- internal-project
+# projects:
+# - internal-project
 
 # Slides (optional).
 #   Associate this publication with Markdown slides.
 #   Simply enter your slide deck's filename without extension.
 #   E.g. `slides: "example"` references `content/slides/example/index.md`.
 #   Otherwise, set `slides: ""`.
-slides: example
+# slides: example
 ---
 
-{{% callout note %}}
+<!-- {{% callout note %}}
 Create your slides in Markdown - click the *Slides* button to check out the example.
 {{% /callout %}}
 
-Add the publication's **full text** or **supplementary notes** here. You can use rich formatting such as including [code, math, and images](https://docs.hugoblox.com/content/writing-markdown-latex/).
+Add the publication's **full text** or **supplementary notes** here. You can use rich formatting such as including [code, math, and images](https://docs.hugoblox.com/content/writing-markdown-latex/). -->
