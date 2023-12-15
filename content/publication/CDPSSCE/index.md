@@ -27,7 +27,11 @@ abstract: The analysis of time series is becoming ever more popular due to the p
 summary: 
 
 tags:
-- Semi-supervised Learning, Constrained Clustering, Explainable Clustering, Shapelets, Time Series
+- Semi-supervised Learning
+- Constrained Clustering
+- Explainable Clustering
+- Shapelets
+- Time Series
 featured: false 
 
 # links:
