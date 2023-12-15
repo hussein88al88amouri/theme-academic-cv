@@ -17,7 +17,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: Assistant Research of  Artificial Intelligence
+role: Ph.D, Assistant Research of  Artificial Intelligence
 
 # Organizations/Affiliations to show in About widget
 organizations:
