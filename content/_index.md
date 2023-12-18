@@ -11,7 +11,7 @@ sections:
       title: 
       image:
         size: cover
-        filename: icon-back.png
+        filename: icon.png
       # cta:
       #   label: '**Get Started**'
       #   url: https://hugoblox.com/templates/
@@ -34,7 +34,7 @@ sections:
       background:
         image:
           # Name of image in `assets/media/`.
-          filename: icon.png
+          filename: icon-back.png
           # Apply image filters?
           filters:
             # Darken the image? Range 0-1 where 1 is transparent and 0 is opaque.
