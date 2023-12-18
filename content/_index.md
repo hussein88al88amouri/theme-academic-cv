@@ -11,7 +11,7 @@ sections:
       title: 
       image:
         size: cover
-        filename: icon.png
+        filename: icon-back.png
       # cta:
       #   label: '**Get Started**'
       #   url: https://hugoblox.com/templates/
