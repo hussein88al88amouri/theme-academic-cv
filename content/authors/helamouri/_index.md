@@ -137,5 +137,5 @@ social:
 highlight_name: true
 ---
 
-I am currently a fellow researcher working on active learning for constraints propsition to facilitate incremental and constrained clustering applied for remote sensing and time series data. This work is an extension of the work done during the three year Ph.D. which introduced the model called Constrained DTW Preserving Shapelets (CDPS) and Shapelet Cluster Explanation (SCE). The goal of the current work is to try and laverage SCE and CDPS to propose constraints in active manner.
+I am currently a fellow researcher working on active learning for constrained proposition to facilitate incremental and constrained clustering applied to remote sensing and time series data. This work extends the research conducted during my three-year Ph.D., which introduced the model called Constrained DTW Preserving Shapelets (CDPS) and Shapelet Cluster Explanation (SCE). The objective of the current work is to leverage SCE and CDPS to propose constraints actively.
 
