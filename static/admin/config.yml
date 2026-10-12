@@ -124,6 +124,31 @@ collections:
       label: Show contact form
       widget: boolean
       default: true
+    - name: about_heading
+      label: About section heading
+      widget: string
+    - name: portrait_crop
+      label: Portrait proportions
+      widget: select
+      options:
+      - label: Original proportions
+        value: natural
+      - label: Square crop
+        value: square
+      default: natural
+    - name: portrait_caption
+      label: Portrait caption
+      widget: string
+      required: false
+      hint: Leave blank to hide the caption.
+    - name: writing_linkedin_url
+      label: LinkedIn writing profile
+      widget: string
+      required: false
+    - name: contact_submit_url
+      label: Contact form submission URL
+      widget: string
+      hint: Use the Netlify site’s /contact/thanks/ URL. Netlify form handling and email notifications must be enabled.
 - name: profile
   label: Biography & education
   files:

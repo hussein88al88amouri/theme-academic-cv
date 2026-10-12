@@ -1,4 +1,38 @@
 (() => {
+  const contactForm = document.querySelector('.contact-form');
+  contactForm?.addEventListener('submit', async event => {
+    // Native cross-origin submission also works from GitHub Pages without CORS.
+    if (new URL(contactForm.action).origin !== window.location.origin) return;
+    event.preventDefault();
+    if (!contactForm.reportValidity()) return;
+    const status = contactForm.querySelector('.form-status');
+    const button = contactForm.querySelector('button[type="submit"]');
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 20000);
+    button.disabled = true;
+    status.hidden = false;
+    status.dataset.state = 'sending';
+    status.textContent = 'Submitting your message…';
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(contactForm)).toString(),
+        signal: controller.signal,
+      });
+      if (!response.ok) throw new Error(`Submission failed: ${response.status}`);
+      status.dataset.state = 'success';
+      status.textContent = 'Your message was submitted. Thank you for reaching out.';
+      contactForm.reset();
+    } catch (error) {
+      status.dataset.state = 'error';
+      status.textContent = 'Your message could not be submitted. Please try again or use the email link. Your text has been kept.';
+    } finally {
+      window.clearTimeout(timeout);
+      button.disabled = false;
+    }
+  });
+
   const menu = document.querySelector('.menu-toggle');
   const navigation = document.querySelector('#portfolio-navigation');
   const closeMenu = () => {

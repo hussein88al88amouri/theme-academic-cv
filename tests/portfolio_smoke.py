@@ -15,6 +15,10 @@ with sync_playwright() as p:
  page.on('pageerror',lambda e:errors.append(str(e)))
  page.goto(base+'/',wait_until='networkidle')
  assert page.locator('h1').inner_text().strip()
+ from urllib.parse import urljoin
+ cv_response=page.request.get(urljoin(base+'/',page.locator('.nav-cv').get_attribute('href')))
+ assert cv_response.ok
+ assert cv_response.body().startswith(b'%PDF')
  publications=page.locator('[data-publication]')
  total=publications.count()
  assert total>0
@@ -37,8 +41,33 @@ with sync_playwright() as p:
  assert not page.locator('.contact-form').evaluate('(f) => f.checkValidity()')
  page.locator('#contact-name').fill('Test researcher')
  page.locator('#contact-email').fill('researcher@example.com')
+ page.locator('#contact-subject').fill('Research collaboration')
  page.locator('#contact-message').fill('Research collaboration')
  assert page.locator('.contact-form').evaluate('(f) => f.checkValidity()')
+ # Exercise a controlled form receiver without sending a real email.
+ from urllib.parse import parse_qs
+ endpoint=base+'/contact/thanks/'
+ page.locator('.contact-form').evaluate('(form, url)=>form.action=url',endpoint)
+ submissions=[]
+ def failed_submission(route):
+  submissions.append(parse_qs(route.request.post_data))
+  route.fulfill(status=500,body='Submission unavailable')
+ page.route(endpoint,failed_submission)
+ page.get_by_role('button',name='Send message').click()
+ page.locator('.form-status[data-state="error"]').wait_for()
+ assert page.locator('#contact-message').input_value()=='Research collaboration'
+ assert page.locator('#contact-subject').input_value()=='Research collaboration'
+ assert page.get_by_role('button',name='Send message').is_enabled()
+ page.unroute(endpoint,failed_submission)
+ page.route(endpoint,lambda route:route.fulfill(status=200,body='Accepted'))
+ page.get_by_role('button',name='Send message').click()
+ page.locator('.form-status[data-state="success"]').wait_for()
+ assert page.locator('#contact-message').input_value()==''
+ assert submissions[0]['email']==['researcher@example.com']
+ assert submissions[0]['subject']==['Research collaboration']
+ assert submissions[0]['message']==['Research collaboration']
+ assert submissions[0]['form-name']==['research-contact']
+ page.unroute(endpoint)
  page.set_viewport_size({'width':390,'height':844})
  page.goto(base+'/',wait_until='networkidle')
  assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth')
@@ -51,7 +80,8 @@ with sync_playwright() as p:
  assert page.locator('.menu-toggle').get_attribute('aria-expanded')=='false'
  page.screenshot(path=str(Path(args.screenshots)/'mobile.png'),full_page=True)
  page.emulate_media(reduced_motion='reduce')
- assert page.locator('.orbit').evaluate('(e)=>getComputedStyle(e).animationName')=='none'
+ assert page.locator('.orbit').count()==0
+ assert page.locator('.portrait-frame img').evaluate('(e)=>getComputedStyle(e).filter')=='none'
  if args.cms_bundle:
   page.route('https://cdn.jsdelivr.net/npm/decap-cms@3.16.3/dist/decap-cms.js',lambda route:route.fulfill(path=args.cms_bundle,content_type='application/javascript'))
  page.goto(base+'/admin/',wait_until='networkidle')
@@ -59,5 +89,5 @@ with sync_playwright() as p:
  assert 'Error loading the CMS configuration' not in page.locator('body').inner_text()
  page.screenshot(path=str(Path(args.screenshots)/'admin.png'),full_page=True)
  assert not errors, errors
- print('PASS: production homepage; publications and research projects; search/year/empty-state behavior; contact validation; mobile navigation/layout; reduced motion; CMS configuration and GitHub login screen; no JavaScript exceptions.')
+ print('PASS: production homepage; publications and research projects; search/year/empty-state behavior; CV download; contact submission/error/retry with a controlled receiver; mobile navigation/layout; reduced motion; CMS configuration and GitHub login screen; no JavaScript exceptions.')
  browser.close()

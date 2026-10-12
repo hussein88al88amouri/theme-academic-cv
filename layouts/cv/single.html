@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  {{ $cv := site.Data.portfolio.cv_url | relURL }}
+  {{ $cv := partial "portfolio/url.html" site.Data.portfolio.cv_url }}
   <meta http-equiv="refresh" content="0; url={{ $cv }}">
   <title>Hussein El Amouri · CV</title>
 </head>
-<body><p><a href="{{ site.Data.portfolio.cv_url | relURL }}">Open the latest CV (PDF)</a></p><p><a href="{{ "/" | relURL }}">Return to website</a></p></body>
+<body><p><a href="{{ partial "portfolio/url.html" site.Data.portfolio.cv_url }}">Open the latest CV (PDF)</a></p><p><a href="{{ "" | relURL }}">Return to website</a></p></body>
 </html>

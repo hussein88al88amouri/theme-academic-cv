@@ -1,10 +1,10 @@
 eyebrow: Machine learning · Time series · Limited supervision
-headline: Learning from less. Understanding more.
+headline: 'Machine learning and Time series: Expert and Machine'
 intro: I study how expert knowledge and limited labels can make machine learning more useful and interpretable—from constrained clustering to seizure detection.
 availability: Open to research collaborations, academic opportunities & industry R&D
 cv_url: /uploads/helamouri/resume.pdf
-research_heading: Questions driving my research
-research_intro: From understanding which constraints help clustering to learning with scarce labels in healthcare.
+research_heading: Current and past research
+research_intro: Projects spanning time-series learning, constrained clustering, healthcare, speech synthesis, and supervised research.
 experience:
 - title: Assistant Professor & Researcher
   organization: University of Sciences and Arts in Lebanon (USAL)
@@ -54,3 +54,8 @@ contact_heading: Let’s explore a research question together.
 contact_text: For research collaborations, academic opportunities, or industry R&D, tell me what you are working on and where our interests connect.
 email: alamourihusein@gmail.com
 contact_form: true
+about_heading: Research, teaching, and collaboration
+portrait_crop: natural
+portrait_caption: ''
+writing_linkedin_url: https://www.linkedin.com/in/hussein-el-amouri-0b24a0165/
+contact_submit_url: https://hussein-el-amouri.netlify.app/contact/thanks/

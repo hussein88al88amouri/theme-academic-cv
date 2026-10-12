@@ -16,7 +16,7 @@
     {{ if and site.Params.features.avatar.gravatar $author_page.Params.email }}
       {{if $profile_url}}<a href="{{$profile_url}}">{{end}}<img class="avatar mr-3 {{if eq $avatar_shape "square"}}avatar-square{{else}}avatar-circle{{end}}" src="https://s.gravatar.com/avatar/{{ md5 $author_page.Params.email }}?s=200" alt="{{$author_page.Title}}">{{if $profile_url}}</a>{{end}}
     {{ else if $author_page.Params.avatar }}
-      {{if $profile_url}}<a href="{{$profile_url}}">{{end}}<img class="avatar mr-3 {{if eq $avatar_shape "square"}}avatar-square{{else}}avatar-circle{{end}}" src="{{ $author_page.Params.avatar | relURL }}" alt="{{$author_page.Title}}" width="270" height="270" style="object-fit:cover">{{if $profile_url}}</a>{{end}}
+      {{if $profile_url}}<a href="{{$profile_url}}">{{end}}<img class="avatar mr-3 {{if eq $avatar_shape "square"}}avatar-square{{else}}avatar-circle{{end}}" src="{{ partial "portfolio/url.html" $author_page.Params.avatar }}" alt="{{$author_page.Title}}" width="270" height="270" style="object-fit:cover">{{if $profile_url}}</a>{{end}}
     {{ else if $avatar }}
       {{ $avatar_image := $avatar.Fill "270x270 Center" }}
       {{if $profile_url}}<a href="{{$profile_url}}">{{end}}<img class="avatar mr-3 {{if eq $avatar_shape "square"}}avatar-square{{else}}avatar-circle{{end}}" src="{{ $avatar_image.RelPermalink }}" alt="{{$author_page.Title}}">{{if $profile_url}}</a>{{end}}

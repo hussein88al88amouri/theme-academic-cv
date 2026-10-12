@@ -71,3 +71,13 @@ python3 tests/portfolio_smoke.py --base-url http://127.0.0.1:1313
 ```
 
 If CDN access is unavailable in the test environment, provide a verified Decap 3.16.3 bundle with `--cms-bundle /path/to/decap-cms.js`. Screenshots are saved under `/tmp/portfolio-smoke` by default. The CMS login screen is checked; remote GitHub authorization and Netlify publishing require the owner’s one-time setup and a subsequent live test.
+
+## Approved portfolio update
+
+The homepage now uses the approved headings and six research interests. It includes all six research/supervision projects. The portrait uses original proportions and colors by default; **Homepage & career → Portrait proportions** can optionally select a square crop. The About heading, portrait caption, LinkedIn writing link, and Medium link are also editable there. The Medium button appears after a real profile URL is provided; no placeholder account is published.
+
+CV buttons open the selected PDF directly. The `/cv/` compatibility route and internal Markdown/profile/menu links also preserve the GitHub Pages project subpath.
+
+The contact form asks for visitor email, subject, and message, with an optional name. It submits to the Netlify URL configured in **Contact form submission URL**. On the Netlify host, it shows submission success or failure; failure preserves the visitor's text. On other hosts it uses a normal browser submission to Netlify, avoiding cross-origin AJAX restrictions.
+
+**Required owner setup for receiving email:** in the Netlify project, enable Forms/form detection, then redeploy so the `research-contact` form is registered. Under that form's notifications, add an email notification to `alamourihusein@gmail.com`. Submit one real test message on the deployed site and confirm both the stored submission and email receipt. The code does not send mail directly, and no database is needed. Browser tests use a controlled receiver to verify encoding, error handling, retry, and success; they do not establish actual Netlify email delivery.

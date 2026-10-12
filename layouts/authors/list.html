@@ -2,7 +2,7 @@
 <section class="universal-wrapper pt-5">
   {{ if .Params.superuser }}
     {{ with .Params.avatar }}
-      <img class="avatar avatar-circle" src="{{ . | relURL }}" alt="Portrait of {{ $.Title }}" width="270" height="270" style="margin:0 auto 2rem;object-fit:cover">
+      <img class="avatar avatar-circle" src="{{ partial "portfolio/url.html" . }}" alt="Portrait of {{ $.Title }}" width="270" height="270" style="margin:0 auto 2rem;object-fit:cover">
     {{ else }}
       {{ with .Resources.GetMatch "avatar.*" }}{{ $portrait := .Fill "270x270 Center" }}
         <img class="avatar avatar-circle" src="{{ $portrait.RelPermalink }}" alt="Portrait of {{ $.Title }}" width="270" height="270" style="margin:0 auto 2rem">

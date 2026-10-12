@@ -12,11 +12,12 @@ organizations:
   url: https://usal.edu.lb/
 bio: AI researcher working on constrained clustering, interpretable time-series learning, and learning from limited labels.
 interests:
-- Constrained clustering & constraint quality
-- Interpretable time-series learning
-- Active & incremental learning
-- Diffusion models & few-shot learning
-- Seizure detection
+- AI and deep learning for time-series applications
+- Semi-supervised learning
+- Diffusion-based learning
+- Active learning
+- Time series in remote sensing
+- Time series in healthcare
 education:
   courses:
   - course: PhD in Computer Science
@@ -46,7 +47,7 @@ skills:
 social:
 - icon: envelope
   icon_pack: fas
-  link: /#contact
+  link: '#contact'
 - icon: graduation-cap
   icon_pack: fas
   link: https://scholar.google.com/citations?user=xZ6kgDkAAAAJ&hl=en
@@ -58,7 +59,7 @@ social:
   link: https://www.linkedin.com/in/hussein-el-amouri-0b24a0165/
 - icon: cv
   icon_pack: ai
-  link: /cv/
+  link: cv/
 highlight_name: true
 ---
 
