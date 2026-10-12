@@ -1,0 +1,3 @@
+{{- $labels := dict "graduation-cap" site.Data.portfolio.ui.social_scholar "github" site.Data.portfolio.ui.social_github "linkedin" site.Data.portfolio.ui.social_linkedin "cv" site.Data.portfolio.ui.cv_label "envelope" site.Data.portfolio.ui.contact_kicker -}}
+{{- $label := .label | default (index $labels .icon) | default (.icon | humanize) -}}
+{{- return $label -}}

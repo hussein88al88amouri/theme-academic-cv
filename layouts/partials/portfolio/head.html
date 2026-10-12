@@ -6,10 +6,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ if .IsHome }}{{ $author.Title }} · Research & Teaching{{ else }}{{ .Title }} · {{ $author.Title }}{{ end }}</title>
+  <title>{{ if .IsHome }}{{ $author.Title }} · {{ $p.ui.site_tagline }}{{ else }}{{ .Title }} · {{ $author.Title }}{{ end }}</title>
   <meta name="description" content="{{ .Params.summary | default (.Description | default $p.intro) | plainify }}">
   <meta name="theme-color" content="#111c27">
-  <meta property="og:title" content="{{ if .IsHome }}{{ $author.Title }} · Research & Teaching{{ else }}{{ .Title }}{{ end }}">
+  <meta property="og:title" content="{{ if .IsHome }}{{ $author.Title }} · {{ $p.ui.site_tagline }}{{ else }}{{ .Title }}{{ end }}">
   <meta property="og:description" content="{{ .Params.summary | default (.Description | default $p.intro) | plainify }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ $canonical }}">
@@ -18,6 +18,7 @@
   <link rel="icon" type="image/svg+xml" href="{{ "admin/logo.svg" | relURL }}">
   <link rel="alternate" type="application/rss+xml" title="Notes & Ideas" href="{{ "post/index.xml" | relURL }}">
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  <style>:root{--accent:{{ $p.appearance.accent_color }};--bg:{{ $p.appearance.background_color }};--hero-heading-size:{{ $p.appearance.headline_size }}px;--hero-role-size:{{ $p.appearance.role_size }}px;--hero-intro-size:{{ $p.appearance.intro_size }}px}</style>
   <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
   {{ if hugo.IsProduction }}{{ with site.Params.marketing.analytics.google_analytics }}
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>

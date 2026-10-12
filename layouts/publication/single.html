@@ -1,16 +1,16 @@
 {{ define "main" }}
 <article class="detail-article">
-  <p class="eyebrow">Publication · {{ .Date.Format "2006" }}</p>
+  <p class="eyebrow">{{ site.Data.portfolio.ui.publication_label }} · {{ .Date.Format "2006" }}</p>
   <h1>{{ .Title }}</h1>
   {{ with .Params.authors }}<p class="detail-authors">{{ delimit . ", " }}</p>{{ end }}
   {{ with .Params.publication }}<p class="detail-venue">{{ . | markdownify }}</p>{{ end }}
   <div class="tags">{{ range .Params.tags }}<span>{{ . }}</span>{{ end }}</div>
   <div class="actions">
-    {{ with .Params.doi }}<a class="button button-primary" href="https://doi.org/{{ replace . "https://doi.org/" "" }}">Publisher / DOI ↗</a>{{ end }}
-    {{ range slice (dict "key" "url_pdf" "label" "PDF") (dict "key" "url_code" "label" "Code") (dict "key" "url_dataset" "label" "Dataset") (dict "key" "url_slides" "label" "Slides") (dict "key" "url_video" "label" "Video") (dict "key" "url_project" "label" "Project") }}{{ $label := .label }}{{ with index $.Params .key }}<a class="button button-quiet" href="{{ partial "portfolio/url.html" . }}">{{ $label }} ↗</a>{{ end }}{{ end }}
-    {{ with .Resources.GetMatch "cite.bib" }}<a class="button button-quiet" href="{{ .RelPermalink }}" download>Download citation</a>{{ end }}
+    {{ with .Params.doi }}<a class="button button-primary" href="https://doi.org/{{ replace . "https://doi.org/" "" }}">{{ site.Data.portfolio.ui.publisher_link }} ↗</a>{{ end }}
+    {{ range slice (dict "key" "url_pdf" "label" site.Data.portfolio.ui.pdf_link) (dict "key" "url_code" "label" site.Data.portfolio.ui.code_link) (dict "key" "url_dataset" "label" site.Data.portfolio.ui.dataset_link) (dict "key" "url_slides" "label" site.Data.portfolio.ui.slides_link) (dict "key" "url_video" "label" site.Data.portfolio.ui.video_link) (dict "key" "url_project" "label" site.Data.portfolio.ui.project_link) }}{{ $label := .label }}{{ with index $.Params .key }}<a class="button button-quiet" href="{{ partial "portfolio/url.html" . }}">{{ $label }} ↗</a>{{ end }}{{ end }}
+    {{ with .Resources.GetMatch "cite.bib" }}<a class="button button-quiet" href="{{ .RelPermalink }}" download>{{ site.Data.portfolio.ui.citation_link }}</a>{{ end }}
   </div>
-  {{ with .Params.abstract }}<section class="detail-panel"><h2>Abstract</h2><div class="prose article-content">{{ . | markdownify }}</div></section>{{ else }}{{ with .Params.summary }}<p class="detail-summary">{{ . }}</p>{{ end }}{{ end }}
+  {{ with .Params.abstract }}<section class="detail-panel"><h2>{{ site.Data.portfolio.ui.abstract_heading }}</h2><div class="prose article-content">{{ . | markdownify }}</div></section>{{ else }}{{ with .Params.summary }}<p class="detail-summary">{{ . }}</p>{{ end }}{{ end }}
   <div class="prose article-content">{{ .Content }}</div>
   {{ with .Resources.GetMatch "featured.*" }}{{ if eq .ResourceType "image" }}<figure class="detail-figure"><img src="{{ .RelPermalink }}" alt="{{ $.Params.image.caption | default $.Title }}" loading="lazy">{{ with $.Params.image.caption }}<figcaption>{{ . }}</figcaption>{{ end }}</figure>{{ end }}{{ end }}
 </article>

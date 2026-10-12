@@ -1,9 +1,9 @@
 {{ define "main" }}
 <article class="detail-article">
-  <p class="eyebrow">{{ .Section | humanize }}</p>
+  <p class="eyebrow">{{ with site.GetPage .Section }}{{ .Title }}{{ else }}{{ .Section | humanize }}{{ end }}</p>
   <h1>{{ .Title }}</h1>
   {{ with .Params.summary }}<p class="detail-summary">{{ . }}</p>{{ end }}
-  {{ with .Params.external_link }}<p><a class="button button-primary" href="{{ . }}">Read the original article ↗</a></p>{{ end }}
+  {{ with .Params.external_link }}<p><a class="button button-primary" href="{{ . }}">{{ site.Data.portfolio.ui.original_article }} ↗</a></p>{{ end }}
   <div class="prose article-content">{{ .Content }}</div>
 </article>
 {{ end }}

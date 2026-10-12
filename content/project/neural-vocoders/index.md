@@ -5,8 +5,10 @@ status: Published research
 tags:
 - Time series
 - Speech synthesis
-summary: Evaluating how neural vocoders generalize to unseen pitch values rather than
-  only testing within their training conditions.
+summary: Evaluating how neural vocoders generalize to unseen pitch values rather than only testing within their training conditions.
+figure: diagram.svg
+figure_alt: Training data are split to control seen and unseen pitch values, and different vocoder families are evaluated for extrapolation beyond their training conditions.
+figure_caption: Conceptual illustration. Training data are split to control seen and unseen pitch values, and different vocoder families are evaluated for extrapolation beyond their training conditions.
 ---
 
 This research introduces a methodology for benchmarking the extrapolation capabilities of neural vocoders by controlling which pitch values are seen during training. It compares autoregressive, source-filter, flow, and GAN approaches.

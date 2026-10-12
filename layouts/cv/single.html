@@ -6,7 +6,7 @@
   <meta name="robots" content="noindex">
   {{ $cv := partial "portfolio/url.html" site.Data.portfolio.cv_url }}
   <meta http-equiv="refresh" content="0; url={{ $cv }}">
-  <title>Hussein El Amouri · CV</title>
+  <title>{{ site.Data.portfolio.ui.cv_title }}</title>
 </head>
-<body><p><a href="{{ partial "portfolio/url.html" site.Data.portfolio.cv_url }}">Open the latest CV (PDF)</a></p><p><a href="{{ "" | relURL }}">Return to website</a></p></body>
+<body><p><a href="{{ partial "portfolio/url.html" site.Data.portfolio.cv_url }}">{{ site.Data.portfolio.ui.cv_open }}</a></p><p><a href="{{ "" | relURL }}">{{ site.Data.portfolio.ui.return_website }}</a></p></body>
 </html>

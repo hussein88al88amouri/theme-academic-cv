@@ -59,7 +59,7 @@ with sync_playwright() as p:
  assert page.locator('#contact-subject').input_value()=='Research collaboration'
  assert page.get_by_role('button',name='Send message').is_enabled()
  page.unroute(endpoint,failed_submission)
- page.route(endpoint,lambda route:route.fulfill(status=200,body='Accepted'))
+ page.route(endpoint,lambda route:route.fulfill(status=202,body='{"accepted":true}',content_type='application/json'))
  page.get_by_role('button',name='Send message').click()
  page.locator('.form-status[data-state="success"]').wait_for()
  assert page.locator('#contact-message').input_value()==''
@@ -82,6 +82,20 @@ with sync_playwright() as p:
  page.emulate_media(reduced_motion='reduce')
  assert page.locator('.orbit').count()==0
  assert page.locator('.portrait-frame img').evaluate('(e)=>getComputedStyle(e).filter')=='none'
+ # Every published project must render its conceptual figure and served SVG.
+ from urllib.parse import urljoin
+ for slug in ['cdps', 'sce', 'constraint-quality', 'seizure-detection', 'neural-vocoders', 'community-aware-coded-caching']:
+  page.goto(base+'/project/'+slug+'/',wait_until='networkidle')
+  figure=page.locator('.project-diagram')
+  assert figure.count()==1
+  assert 'Conceptual illustration' in figure.locator('figcaption').inner_text()
+  image=figure.locator('img')
+  assert image.get_attribute('alt')
+  assert image.evaluate('(e)=>e.complete && e.naturalWidth>0')
+  response=page.request.get(urljoin(base+'/',image.get_attribute('src')))
+  assert response.ok and b'<svg' in response.body()
+ page.goto(base+'/project/seizure-detection/',wait_until='networkidle')
+ page.screenshot(path=str(Path(args.screenshots)/'project-figure.png'),full_page=True)
  # Detail and archive pages must share the homepage's design and navigation.
  for path in ['publication/eeg-ecg-synchronization/', 'publication/cdpssce/', 'project/neural-vocoders/', 'publication/', 'post/', 'authors/helamouri/']:
   page.goto(base+'/'+path,wait_until='networkidle')

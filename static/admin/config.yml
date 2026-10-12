@@ -150,11 +150,287 @@ collections:
     - name: contact_submit_url
       label: Contact form submission URL
       widget: string
-      hint: Use the Netlify site’s /contact/thanks/ URL. Netlify form handling and email notifications must be enabled.
+      hint: Use the primary Netlify URL followed by /.netlify/functions/contact. Brevo API key and verified sender must be configured securely in Netlify.
     - name: primary_site_url
       label: Primary website address
       widget: string
       hint: Keep the existing Netlify address as the primary website, including the trailing slash.
+    - name: navigation
+      label: Navigation menu
+      widget: list
+      fields:
+      - name: label
+        label: Menu text
+        widget: string
+      - name: url
+        label: Destination
+        widget: string
+        hint: 'Use #about, #research, #publications, #experience, #notes, #contact, or a full website URL.'
+    - name: ui
+      label: All headings, buttons, labels and messages
+      widget: object
+      collapsed: true
+      fields:
+      - name: skip_link
+        label: Skip Link
+        widget: string
+      - name: menu
+        label: Menu
+        widget: string
+      - name: brand_mark
+        label: Brand Mark
+        widget: string
+      - name: cv_label
+        label: Cv Label
+        widget: string
+      - name: hero_research_button
+        label: Hero Research Button
+        widget: string
+      - name: hero_cv_button
+        label: Hero Cv Button
+        widget: string
+      - name: scroll_hint
+        label: Scroll Hint
+        widget: string
+      - name: about_kicker
+        label: About Kicker
+        widget: string
+      - name: research_kicker
+        label: Research Kicker
+        widget: string
+      - name: publications_kicker
+        label: Publications Kicker
+        widget: string
+      - name: experience_kicker
+        label: Experience Kicker
+        widget: string
+      - name: teaching_kicker
+        label: Teaching Kicker
+        widget: string
+      - name: notes_kicker
+        label: Notes Kicker
+        widget: string
+      - name: contact_kicker
+        label: Contact Kicker
+        widget: string
+      - name: interests_heading
+        label: Interests Heading
+        widget: string
+      - name: publications_heading
+        label: Publications Heading
+        widget: string
+      - name: publications_archive
+        label: Publications Archive
+        widget: string
+      - name: search_label
+        label: Search Label
+        widget: string
+      - name: search_placeholder
+        label: Search Placeholder
+        widget: string
+      - name: year_label
+        label: Year Label
+        widget: string
+      - name: all_years
+        label: All Years
+        widget: string
+      - name: publication_count
+        label: Publication Count
+        widget: string
+      - name: publication_empty
+        label: Publication Empty
+        widget: string
+      - name: experience_heading
+        label: Experience Heading
+        widget: string
+      - name: education_heading
+        label: Education Heading
+        widget: string
+      - name: tools_heading
+        label: Tools Heading
+        widget: string
+      - name: teaching_heading
+        label: Teaching Heading
+        widget: string
+      - name: courses_heading
+        label: Courses Heading
+        widget: string
+      - name: notes_heading
+        label: Notes Heading
+        widget: string
+      - name: linkedin_writing
+        label: Linkedin Writing
+        widget: string
+      - name: medium_writing
+        label: Medium Writing
+        widget: string
+      - name: external_essay
+        label: External Essay
+        widget: string
+      - name: read_note
+        label: Read Note
+        widget: string
+      - name: notes_archive
+        label: Notes Archive
+        widget: string
+      - name: notes_empty
+        label: Notes Empty
+        widget: string
+      - name: contact_name
+        label: Contact Name
+        widget: string
+      - name: contact_email
+        label: Contact Email
+        widget: string
+      - name: contact_subject
+        label: Contact Subject
+        widget: string
+      - name: contact_message
+        label: Contact Message
+        widget: string
+      - name: contact_button
+        label: Contact Button
+        widget: string
+      - name: contact_direct
+        label: Contact Direct
+        widget: string
+      - name: contact_sending
+        label: Contact Sending
+        widget: string
+      - name: contact_success
+        label: Contact Success
+        widget: string
+      - name: contact_error
+        label: Contact Error
+        widget: string
+      - name: contact_retained
+        label: Contact Retained
+        widget: string
+      - name: footer_rss
+        label: Footer Rss
+        widget: string
+      - name: footer_edit
+        label: Footer Edit
+        widget: string
+      - name: footer_top
+        label: Footer Top
+        widget: string
+      - name: back_portfolio
+        label: Back Portfolio
+        widget: string
+      - name: research_project
+        label: Research Project
+        widget: string
+      - name: publication_label
+        label: Publication Label
+        widget: string
+      - name: abstract_heading
+        label: Abstract Heading
+        widget: string
+      - name: publisher_link
+        label: Publisher Link
+        widget: string
+      - name: details_link
+        label: Details Link
+        widget: string
+      - name: pdf_link
+        label: Pdf Link
+        widget: string
+      - name: code_link
+        label: Code Link
+        widget: string
+      - name: dataset_link
+        label: Dataset Link
+        widget: string
+      - name: slides_link
+        label: Slides Link
+        widget: string
+      - name: video_link
+        label: Video Link
+        widget: string
+      - name: project_link
+        label: Project Link
+        widget: string
+      - name: citation_link
+        label: Citation Link
+        widget: string
+      - name: figure_fullsize
+        label: Figure Fullsize
+        widget: string
+      - name: project_code
+        label: Project Code
+        widget: string
+      - name: project_external
+        label: Project External
+        widget: string
+      - name: original_article
+        label: Original Article
+        widget: string
+      - name: archive_label
+        label: Archive Label
+        widget: string
+      - name: read_more
+        label: Read More
+        widget: string
+      - name: archive_empty
+        label: Archive Empty
+        widget: string
+      - name: biography_label
+        label: Biography Label
+        widget: string
+      - name: social_scholar
+        label: Social Scholar
+        widget: string
+      - name: social_github
+        label: Social Github
+        widget: string
+      - name: social_linkedin
+        label: Social Linkedin
+        widget: string
+      - name: edit_page
+        label: Edit Page
+        widget: string
+      - name: site_tagline
+        label: Site Tagline
+        widget: string
+      - name: cv_title
+        label: Cv Title
+        widget: string
+      - name: cv_open
+        label: Cv Open
+        widget: string
+      - name: return_website
+        label: Return Website
+        widget: string
+    - name: appearance
+      label: Colors and homepage text sizes
+      widget: object
+      collapsed: true
+      fields:
+      - name: headline_size
+        label: Maximum headline size (px)
+        widget: number
+        value_type: float
+        min: 12
+        max: 80
+      - name: role_size
+        label: Role / affiliation size (px)
+        widget: number
+        value_type: float
+        min: 12
+        max: 80
+      - name: intro_size
+        label: Introduction size (px)
+        widget: number
+        value_type: float
+        min: 12
+        max: 80
+      - name: accent_color
+        label: Accent color
+        widget: color
+      - name: background_color
+        label: Background color
+        widget: color
 - name: profile
   label: Biography & education
   files:
@@ -252,6 +528,10 @@ collections:
         - github
         - linkedin
         - cv
+        - medium
+        - orcid
+        - website
+        - link
       - name: icon_pack
         label: Icon pack
         widget: select
@@ -262,6 +542,10 @@ collections:
       - name: link
         label: Link
         widget: string
+      - name: label
+        label: Link label
+        widget: string
+        required: false
     - name: body
       label: Full biography
       widget: markdown
@@ -411,7 +695,22 @@ collections:
     widget: string
     required: false
   - *id006
+  - name: figure
+    label: Conceptual figure
+    widget: image
+    required: false
+    hint: Use diagram.svg for the bundled figure, or upload a replacement. SVG, PNG, and JPG are supported.
+  - name: figure_alt
+    label: Figure description for accessibility
+    widget: text
+    required: false
+  - name: figure_caption
+    label: Figure caption
+    widget: text
+    required: false
   summary: '{{title}}'
+  media_folder: ''
+  public_folder: ''
 - name: post
   label: Notes & ideas
   folder: content/post
@@ -435,3 +734,63 @@ collections:
     hint: Leave blank for a post hosted here. For Medium, add its full https:// URL; the homepage and notes archive link to it directly.
   - *id006
   summary: '{{title}}'
+- name: pages
+  label: Additional pages
+  folder: content/page
+  create: true
+  path: '{{slug}}/index'
+  format: yaml-frontmatter
+  extension: md
+  fields:
+  - name: title
+    label: Page title
+    widget: string
+  - name: summary
+    label: Description
+    widget: text
+    required: false
+  - name: draft
+    label: Hide from public site
+    widget: boolean
+    default: false
+    required: false
+  - name: body
+    label: Page content
+    widget: markdown
+  hint: Add pages here, then add their /page/<slug>/ address to the navigation menu.
+- name: page_headings
+  label: Archive & thank-you pages
+  files:
+  - name: publications
+    label: Publications archive
+    file: content/publication/_index.md
+    fields:
+    - name: title
+      label: Title
+      widget: string
+    - name: body
+      label: Text
+      widget: markdown
+      required: false
+  - name: notes
+    label: Notes archive
+    file: content/post/_index.md
+    fields:
+    - name: title
+      label: Title
+      widget: string
+    - name: body
+      label: Text
+      widget: markdown
+      required: false
+  - name: thanks
+    label: Thank-you page
+    file: content/contact/thanks.md
+    fields:
+    - name: title
+      label: Title
+      widget: string
+    - name: body
+      label: Text
+      widget: markdown
+      required: false

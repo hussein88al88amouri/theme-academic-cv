@@ -1,5 +1,9 @@
 # Editing the research portfolio in your browser
 
+For everyday editing, use [Browser editing guide](browser-editing.md).
+
+**Current contact delivery:** the form now uses a Netlify function and Brevo for automatic To/BCC email. Follow [Brevo setup](brevo-email-setup.md). Earlier Netlify Forms instructions below describe the previous delivery mechanism and are superseded by that guide.
+
 The website includes a Decap CMS dashboard at `/admin/`. It edits the existing GitHub repository and uses Netlify to rebuild the site. You do not need to edit code for routine content updates.
 
 These changes must first be deployed from `hussein88al88amouri/theme-academic-cv` to the existing Netlify site. The cloud environment's Publish action saves the development environment; it does not deploy the website.
@@ -99,3 +103,6 @@ GitHub Pages deployment does not update Netlify. To replace the site at **https:
 The shared header, footer, fonts, colors, and article styles now apply to publication, project, author, post, and archive pages. The primary address is editable in **Homepage & career** and is used for canonical metadata, including when the site is also built as a GitHub Pages preview. The circular portrait and formal headline are also editable in the dashboard.
 
 Local builds and tests do not prove that Netlify's project has been linked or that a production deployment has completed. Repository access does not supply Netlify account access.
+
+
+Each of the six projects now includes a conceptual SVG diagram, an accessible description, and a caption distinguishing the illustration from experimental results. In **Research projects**, you can replace the figure and edit its description/caption. Existing research GIFs and photographs remain available below the main content.

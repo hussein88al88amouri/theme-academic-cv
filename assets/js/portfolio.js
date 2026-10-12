@@ -12,21 +12,26 @@
     button.disabled = true;
     status.hidden = false;
     status.dataset.state = 'sending';
-    status.textContent = 'Submitting your message…';
+    status.textContent = contactForm.dataset.sending;
     try {
       const response = await fetch(contactForm.action, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded', Accept: 'application/json' },
         body: new URLSearchParams(new FormData(contactForm)).toString(),
         signal: controller.signal,
       });
-      if (!response.ok) throw new Error(`Submission failed: ${response.status}`);
+      const receipt = await response.json().catch(() => null);
+      if (!response.ok || receipt?.accepted !== true) {
+        const failure = new Error('Submission was not accepted');
+        failure.publicMessage = typeof receipt?.message === 'string' ? receipt.message : '';
+        throw failure;
+      }
       status.dataset.state = 'success';
-      status.textContent = 'Your message was submitted. Thank you for reaching out.';
+      status.textContent = contactForm.dataset.success;
       contactForm.reset();
     } catch (error) {
       status.dataset.state = 'error';
-      status.textContent = 'Your message could not be submitted. Please try again or use the email link. Your text has been kept.';
+      status.textContent = `${error.publicMessage || contactForm.dataset.error} ${contactForm.dataset.retained}`;
     } finally {
       window.clearTimeout(timeout);
       button.disabled = false;
@@ -68,7 +73,7 @@
       publication.hidden = !matches;
       if (matches) visible++;
     });
-    count.textContent = `${visible} of ${publications.length} publications`;
+    count.textContent = count.dataset.template.replace('{visible}', visible).replace('{total}', publications.length);
     empty.hidden = visible !== 0;
   };
   if (search && year) {
@@ -90,7 +95,7 @@
       });
     }, { rootMargin: '-15% 0px -65% 0px' });
     navLinks.forEach(link => {
-      const section = document.querySelector(link.hash);
+      const section = document.getElementById(link.hash.slice(1));
       if (section) activeObserver.observe(section);
     });
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {

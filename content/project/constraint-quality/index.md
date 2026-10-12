@@ -5,6 +5,9 @@ date: '2026-10-12'
 tags:
 - Constrained clustering
 status: Ongoing research
+figure: diagram.svg
+figure_alt: Ongoing research examines criteria for assessing the quality and potential benefit of clustering constraints. The diagram poses the research question; it does not claim an established answer.
+figure_caption: Conceptual illustration. Ongoing research examines criteria for assessing the quality and potential benefit of clustering constraints. The diagram poses the research question; it does not claim an established answer.
 ---
 
 Which constraints actually help a clustering algorithm? This recurring question still lacks a sufficiently general and accurate answer.

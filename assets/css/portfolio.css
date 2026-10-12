@@ -60,3 +60,12 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
 .detail-article .note-card h2{font-size:1.25rem}
 @media(max-width:600px){.detail-panel{padding:20px}.detail-article .notes-grid{grid-template-columns:1fr}.detail-main{padding-top:28px}.detail-article h1{font-size:2rem}}
 .profile-portrait{width:200px;height:200px;border-radius:50%;object-fit:cover;display:block;margin-bottom:30px}
+/* Balance the research headline with the role and introduction. */
+.research-portfolio .hero h1{font-size:clamp(2rem,3.2vw,var(--hero-heading-size,48px));line-height:1.22}
+.research-portfolio .hero-role{font-size:var(--hero-role-size,18.08px);line-height:1.6}
+.research-portfolio .hero-intro{font-size:var(--hero-intro-size,18.4px);line-height:1.7}
+@media(max-width:800px){.research-portfolio .hero h1{font-size:clamp(1.85rem,5.8vw,2.5rem)}.research-portfolio .hero-role{font-size:1.08rem}.research-portfolio .hero-intro{font-size:1.1rem}}
+.owner-editor-link{border:1px solid var(--border);border-radius:6px;padding:5px 9px;color:var(--muted)!important;font-size:.72rem}
+.context-editor-link{display:inline-block;margin:18px 0}
+.detail-main>.context-editor-link{float:right;margin:0 0 20px 16px}
+@media(max-width:520px){.detail-main>.context-editor-link{float:none;margin:0 0 24px;display:block;width:fit-content}}

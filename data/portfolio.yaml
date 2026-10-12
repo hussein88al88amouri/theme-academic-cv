@@ -58,5 +58,102 @@ about_heading: Research, teaching, and collaboration
 portrait_crop: circle
 portrait_caption: ''
 writing_linkedin_url: https://www.linkedin.com/in/hussein-el-amouri-0b24a0165/
-contact_submit_url: https://hussein-el-amouri.netlify.app/contact/thanks/
+contact_submit_url: https://hussein-el-amouri.netlify.app/.netlify/functions/contact
 primary_site_url: https://hussein-el-amouri.netlify.app/
+ui:
+  skip_link: Skip to content
+  menu: Menu
+  brand_mark: HEA
+  cv_label: CV
+  hero_research_button: Explore my research
+  hero_cv_button: View CV
+  scroll_hint: A little background
+  about_kicker: 01 / About
+  research_kicker: 02 / Research
+  publications_kicker: 03 / Publications
+  experience_kicker: 04 / Experience
+  teaching_kicker: 05 / Teaching & supervision
+  notes_kicker: 06 / Notes & ideas
+  contact_kicker: 07 / Get in touch
+  interests_heading: Research interests
+  publications_heading: Published work
+  publications_archive: All publications
+  search_label: Search publications
+  search_placeholder: Title, topic, or venue…
+  year_label: Year
+  all_years: All years
+  publication_count: '{visible} of {total} publications'
+  publication_empty: No publications match these filters. Try another keyword or year.
+  experience_heading: Research, teaching & practice
+  education_heading: Education
+  tools_heading: Tools I work with
+  teaching_heading: From curiosity to research
+  courses_heading: Courses at USAL
+  notes_heading: Thinking out loud
+  linkedin_writing: Read on LinkedIn
+  medium_writing: Read on Medium
+  external_essay: External essay
+  read_note: Read the note
+  notes_archive: Browse all notes
+  notes_empty: A space for research notes and open questions. There are no posts here yet.
+  contact_name: Your name (optional)
+  contact_email: Email
+  contact_subject: Subject
+  contact_message: Message
+  contact_button: Send message
+  contact_direct: Prefer email? You can contact me directly using the address above.
+  contact_sending: Submitting your message…
+  contact_success: Your message has been submitted for email delivery. Thank you.
+  contact_error: Your message could not be submitted. Please try again or use the email link.
+  contact_retained: Your text has been kept.
+  footer_rss: RSS
+  footer_edit: Edit website
+  footer_top: Back to top
+  back_portfolio: Back to portfolio
+  research_project: Research project
+  publication_label: Publication
+  abstract_heading: Abstract
+  publisher_link: Publisher / DOI
+  details_link: Details
+  pdf_link: PDF
+  code_link: Code
+  dataset_link: Dataset
+  slides_link: Slides
+  video_link: Video
+  project_link: Project
+  citation_link: Download citation
+  figure_fullsize: Open full size
+  project_code: Explore the code
+  project_external: Project website
+  original_article: Read the original article
+  archive_label: Explore
+  read_more: Read more
+  archive_empty: No entries have been published here yet.
+  biography_label: Biography
+  social_scholar: Google Scholar
+  social_github: GitHub
+  social_linkedin: LinkedIn
+  edit_page: Edit this page
+  site_tagline: Research & Teaching
+  cv_title: Curriculum vitae
+  cv_open: Open the latest CV (PDF)
+  return_website: Return to website
+navigation:
+- label: About
+  url: '#about'
+- label: Research
+  url: '#research'
+- label: Publications
+  url: '#publications'
+- label: Experience
+  url: '#experience'
+- label: Notes
+  url: '#notes'
+- label: Contact
+  url: '#contact'
+appearance:
+  headline_size: 48
+  role_size: 18.08
+  intro_size: 18.4
+  accent_color: '#83dcc8'
+  background_color: '#111c27'
