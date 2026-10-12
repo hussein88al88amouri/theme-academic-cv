@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+{{ partial "portfolio/head.html" . }}
+<body class="research-portfolio">
+  <a class="skip-link" href="#main">Skip to content</a>
+  {{ partial "portfolio/header.html" . }}
+  <main id="main" class="section-shell detail-main">
+    <a class="text-link back-link" href="{{ "" | relURL }}">← Back to portfolio</a>
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "portfolio/footer.html" . }}
+</body>
+</html>

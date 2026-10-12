@@ -81,3 +81,21 @@ CV buttons open the selected PDF directly. The `/cv/` compatibility route and in
 The contact form asks for visitor email, subject, and message, with an optional name. It submits to the Netlify URL configured in **Contact form submission URL**. On the Netlify host, it shows submission success or failure; failure preserves the visitor's text. On other hosts it uses a normal browser submission to Netlify, avoiding cross-origin AJAX restrictions.
 
 **Required owner setup for receiving email:** in the Netlify project, enable Forms/form detection, then redeploy so the `research-contact` form is registered. Under that form's notifications, add an email notification to `alamourihusein@gmail.com`. Submit one real test message on the deployed site and confirm both the stored submission and email receipt. The code does not send mail directly, and no database is needed. Browser tests use a controlled receiver to verify encoding, error handling, retry, and success; they do not establish actual Netlify email delivery.
+
+## Replacing the old site at the existing Netlify address
+
+GitHub Pages deployment does not update Netlify. To replace the site at **https://hussein-el-amouri.netlify.app/**, configure the existing Netlify project rather than creating a new one:
+
+1. Sign in to Netlify and select the project serving `hussein-el-amouri.netlify.app`.
+2. Open **Project configuration → Build & deploy → Continuous deployment**.
+3. Under **Repository**, choose **Link repository** (or **Change repository** if a different repository is connected).
+4. Select GitHub and authorize access to `hussein88al88amouri/theme-academic-cv` if needed.
+5. Select that repository and production branch `main`.
+6. Use build command `hugo --gc --minify`, publish directory `public`, and leave the base directory empty. The checked-in `netlify.toml` pins Hugo 0.119.0; the site configuration sets the existing Netlify address.
+7. Save the settings, then open **Deploys → Trigger deploy → Clear cache and deploy site**.
+8. Confirm the deployment uses the latest commit on `main`, finishes successfully, and becomes the **published production deploy**. If deploys are locked, unlock production publishing first. Subsequent pushes to `main` should deploy automatically.
+9. Test the homepage, CV PDF, a publication page, and a real contact message at the Netlify address. Enable form detection and email notifications as described above.
+
+The shared header, footer, fonts, colors, and article styles now apply to publication, project, author, post, and archive pages. The primary address is editable in **Homepage & career** and is used for canonical metadata, including when the site is also built as a GitHub Pages preview. The circular portrait and formal headline are also editable in the dashboard.
+
+Local builds and tests do not prove that Netlify's project has been linked or that a production deployment has completed. Repository access does not supply Netlify account access.

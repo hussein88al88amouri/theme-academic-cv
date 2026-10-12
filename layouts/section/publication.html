@@ -1,0 +1,9 @@
+{{ define "main" }}
+<section class="detail-article">
+  <p class="eyebrow">Explore</p><h1>{{ .Title }}</h1>
+  <div class="prose article-content">{{ .Content }}</div>
+  <div class="notes-grid">{{ range .Pages }}
+  <article class="note-card"><h2><a href="{{ .Params.external_link | default .RelPermalink }}">{{ .Title }}</a></h2><p>{{ .Params.summary | default (.Summary | plainify | truncate 180) }}</p><a class="text-link" href="{{ .Params.external_link | default .RelPermalink }}">Read more ↗</a></article>
+  {{ else }}<p>No entries have been published here yet.</p>{{ end }}</div>
+</section>
+{{ end }}

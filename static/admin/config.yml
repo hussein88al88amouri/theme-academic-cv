@@ -135,7 +135,9 @@ collections:
         value: natural
       - label: Square crop
         value: square
-      default: natural
+      - label: Circular portrait
+        value: circle
+      default: circle
     - name: portrait_caption
       label: Portrait caption
       widget: string
@@ -149,6 +151,10 @@ collections:
       label: Contact form submission URL
       widget: string
       hint: Use the Netlify site’s /contact/thanks/ URL. Netlify form handling and email notifications must be enabled.
+    - name: primary_site_url
+      label: Primary website address
+      widget: string
+      hint: Keep the existing Netlify address as the primary website, including the trailing slash.
 - name: profile
   label: Biography & education
   files:

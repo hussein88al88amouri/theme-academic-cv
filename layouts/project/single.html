@@ -1,0 +1,11 @@
+{{ define "main" }}
+<article class="detail-article">
+  <p class="eyebrow">Research project · {{ .Params.status | default "Research" }}</p>
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.summary }}<p class="detail-summary">{{ . }}</p>{{ end }}
+  <div class="tags">{{ range .Params.tags }}<span>{{ . }}</span>{{ end }}</div>
+  <div class="actions">{{ with .Params.url_code }}<a class="button button-primary" href="{{ . }}">Explore the code ↗</a>{{ end }}{{ with .Params.external_link }}<a class="button button-quiet" href="{{ . }}">Project website ↗</a>{{ end }}</div>
+  <div class="prose article-content">{{ .Content }}</div>
+  {{ with .Resources.GetMatch "featured.*" }}{{ if eq .ResourceType "image" }}<figure class="detail-figure"><img src="{{ .RelPermalink }}" alt="{{ $.Title }}" loading="lazy"></figure>{{ end }}{{ end }}
+</article>
+{{ end }}

@@ -1,41 +1,12 @@
 {{ $p := site.Data.portfolio }}
 {{ $cv := partial "portfolio/url.html" $p.cv_url }}
 {{ $author := site.GetPage "/authors/helamouri" }}
-{{ $css := resources.Get "css/portfolio.css" | minify | fingerprint }}
-{{ $js := resources.Get "js/portfolio.js" | minify | fingerprint }}
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ $author.Title }} · Research & Teaching</title>
-  <meta name="description" content="{{ $p.intro }}">
-  <meta name="theme-color" content="#111c27">
-  <meta property="og:title" content="{{ $author.Title }} · Research & Teaching">
-  <meta property="og:description" content="{{ $p.intro }}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ .Permalink }}">
-  {{ with $author.Params.avatar }}<meta property="og:image" content="{{ . | absURL }}">{{ else }}{{ with $author.Resources.GetMatch "avatar.*" }}<meta property="og:image" content="{{ .Permalink }}">{{ end }}{{ end }}
-  <link rel="canonical" href="{{ .Permalink }}">
-  <link rel="icon" type="image/svg+xml" href="{{ "admin/logo.svg" | relURL }}">
-  <link rel="alternate" type="application/rss+xml" title="Notes & Ideas" href="{{ "post/index.xml" | relURL }}">
-  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
-  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
-  {{ if hugo.IsProduction }}{{ with site.Params.marketing.analytics.google_analytics }}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config',{{ . }});</script>
-  {{ end }}{{ end }}
-</head>
+{{ partial "portfolio/head.html" . }}
 <body class="research-portfolio">
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="portfolio-header">
-    <a class="brand" href="#top" aria-label="{{ $author.Title }} home"><span class="brand-mark" aria-hidden="true">HEA<span>·</span></span><span class="brand-name">{{ $author.Title }}</span></a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="portfolio-navigation">Menu <span aria-hidden="true">☰</span></button>
-    <nav id="portfolio-navigation" aria-label="Main navigation">
-      <a href="#about">About</a><a href="#research">Research</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="#notes">Notes</a><a href="#contact">Contact</a>
-      <a class="nav-cv" href="{{ $cv }}">CV <span aria-hidden="true">↗</span></a>
-    </nav>
-  </header>
+  {{ partial "portfolio/header.html" . }}
   <main id="main">
     <section id="top" class="hero section-shell" aria-labelledby="hero-title">
       <div class="hero-copy">
@@ -101,6 +72,6 @@
       {{ if $p.contact_form }}<form class="contact-form" name="research-contact" method="POST" action="{{ $p.contact_submit_url }}" data-netlify="true" netlify-honeypot="website"><input type="hidden" name="form-name" value="research-contact"><p hidden><label>Leave this field empty <input name="website" tabindex="-1" autocomplete="off"></label></p><label for="contact-name">Your name (optional)</label><input id="contact-name" name="name" autocomplete="name" maxlength="200"><label for="contact-email">Email</label><input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254"><label for="contact-subject">Subject</label><input id="contact-subject" name="subject" required maxlength="300"><label for="contact-message">Message</label><textarea id="contact-message" name="message" rows="5" required maxlength="10000"></textarea><button class="button button-primary" type="submit">Send message <span aria-hidden="true">↗</span></button><p class="form-status" role="status" aria-live="polite" hidden></p><p class="form-note">Prefer email? You can contact me directly using the address above.</p></form>{{ end }}</div>
     </section>
   </main>
-  <footer class="portfolio-footer section-shell"><p>© {{ now.Year }} {{ $author.Title }}</p><div><a href="{{ "post/index.xml" | relURL }}">RSS</a><a href="{{ "admin/" | relURL }}">Edit website</a><a href="#top">Back to top ↑</a></div></footer>
+  {{ partial "portfolio/footer.html" . }}
 </body>
 </html>

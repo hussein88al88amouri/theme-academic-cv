@@ -82,6 +82,22 @@ with sync_playwright() as p:
  page.emulate_media(reduced_motion='reduce')
  assert page.locator('.orbit').count()==0
  assert page.locator('.portrait-frame img').evaluate('(e)=>getComputedStyle(e).filter')=='none'
+ # Detail and archive pages must share the homepage's design and navigation.
+ for path in ['publication/eeg-ecg-synchronization/', 'publication/cdpssce/', 'project/neural-vocoders/', 'publication/', 'post/', 'authors/helamouri/']:
+  page.goto(base+'/'+path,wait_until='networkidle')
+  assert page.locator('body').get_attribute('class')=='research-portfolio'
+  assert page.locator('.portfolio-header').count()==1
+  assert page.locator('.portfolio-footer').count()==1
+  assert page.locator('.detail-main').count()==1
+  assert page.locator('h1').inner_text().strip()
+  assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth')
+  assert page.locator('link[rel="canonical"]').get_attribute('href').startswith('https://hussein-el-amouri.netlify.app/')
+ page.goto(base+'/',wait_until='networkidle')
+ assert page.locator('.portrait-frame').get_attribute('data-crop')=='circle'
+ assert page.locator('.portrait-frame').evaluate('(e)=>getComputedStyle(e).borderRadius')=='50%'
+ page.goto(base+'/publication/eeg-ecg-synchronization/',wait_until='networkidle')
+ page.set_viewport_size({'width':1440,'height':1050})
+ page.screenshot(path=str(Path(args.screenshots)/'publication.png'),full_page=True)
  if args.cms_bundle:
   page.route('https://cdn.jsdelivr.net/npm/decap-cms@3.16.3/dist/decap-cms.js',lambda route:route.fulfill(path=args.cms_bundle,content_type='application/javascript'))
  page.goto(base+'/admin/',wait_until='networkidle')

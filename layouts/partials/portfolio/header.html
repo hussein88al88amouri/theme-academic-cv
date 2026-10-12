@@ -1,0 +1,10 @@
+{{ $author := site.GetPage "/authors/helamouri" }}
+{{ $cv := partial "portfolio/url.html" site.Data.portfolio.cv_url }}
+  <header class="portfolio-header">
+    <a class="brand" href="{{ if .IsHome }}#top{{ else }}{{ "#top" | relURL }}{{ end }}" aria-label="{{ $author.Title }} home"><span class="brand-mark" aria-hidden="true">HEA<span>·</span></span><span class="brand-name">{{ $author.Title }}</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="portfolio-navigation">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="portfolio-navigation" aria-label="Main navigation">
+      <a href="{{ if .IsHome }}#about{{ else }}{{ "#about" | relURL }}{{ end }}">About</a><a href="{{ if .IsHome }}#research{{ else }}{{ "#research" | relURL }}{{ end }}">Research</a><a href="{{ if .IsHome }}#publications{{ else }}{{ "#publications" | relURL }}{{ end }}">Publications</a><a href="{{ if .IsHome }}#experience{{ else }}{{ "#experience" | relURL }}{{ end }}">Experience</a><a href="{{ if .IsHome }}#notes{{ else }}{{ "#notes" | relURL }}{{ end }}">Notes</a><a href="{{ if .IsHome }}#contact{{ else }}{{ "#contact" | relURL }}{{ end }}">Contact</a>
+      <a class="nav-cv" href="{{ $cv }}">CV <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>

@@ -1,0 +1,26 @@
+{{ $p := site.Data.portfolio }}
+{{ $author := site.GetPage "/authors/helamouri" }}
+{{ $css := resources.Get "css/portfolio.css" | minify | fingerprint }}
+{{ $js := resources.Get "js/portfolio.js" | minify | fingerprint }}
+{{ $canonical := replace .Permalink site.BaseURL ($p.primary_site_url | default site.BaseURL) }}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ $author.Title }} · Research & Teaching{{ else }}{{ .Title }} · {{ $author.Title }}{{ end }}</title>
+  <meta name="description" content="{{ .Params.summary | default (.Description | default $p.intro) | plainify }}">
+  <meta name="theme-color" content="#111c27">
+  <meta property="og:title" content="{{ if .IsHome }}{{ $author.Title }} · Research & Teaching{{ else }}{{ .Title }}{{ end }}">
+  <meta property="og:description" content="{{ .Params.summary | default (.Description | default $p.intro) | plainify }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ $canonical }}">
+  {{ with $author.Params.avatar }}<meta property="og:image" content="{{ . | absURL }}">{{ else }}{{ with $author.Resources.GetMatch "avatar.*" }}<meta property="og:image" content="{{ $canonical }}">{{ end }}{{ end }}
+  <link rel="canonical" href="{{ $canonical }}">
+  <link rel="icon" type="image/svg+xml" href="{{ "admin/logo.svg" | relURL }}">
+  <link rel="alternate" type="application/rss+xml" title="Notes & Ideas" href="{{ "post/index.xml" | relURL }}">
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+  {{ if hugo.IsProduction }}{{ with site.Params.marketing.analytics.google_analytics }}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config',{{ . }});</script>
+  {{ end }}{{ end }}
+</head>
