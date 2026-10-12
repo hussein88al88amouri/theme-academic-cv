@@ -1,15 +1,7 @@
 ---
-title: Posts
+title: Notes & Ideas
 cms_exclude: true
-
-# View.
-#   1 = List
-#   2 = Compact
-#   3 = Card
-view: 2
-
-# Optional header image (relative to `static/media/` folder).
-header:
-  caption: ''
-  image: ''
+view: 3
 ---
+
+Research notes and thoughts on machine learning.

@@ -1,0 +1,406 @@
+backend:
+  name: github
+  repo: hussein88al88amouri/theme-academic-cv
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+site_url: https://hussein-el-amouri.netlify.app
+display_url: https://hussein-el-amouri.netlify.app
+site_domain: hussein-el-amouri.netlify.app
+logo_url: /admin/logo.svg
+publish_mode: editorial_workflow
+media_folder: static/uploads
+public_folder: /uploads
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: '-'
+collections:
+- name: website
+  label: Homepage & career
+  description: Edit the homepage, CV, experience, teaching, supervision, and contact details.
+  files:
+  - name: homepage
+    label: Homepage & career
+    file: data/portfolio.yaml
+    fields:
+    - name: eyebrow
+      label: Research topics above headline
+      widget: string
+    - name: headline
+      label: Homepage headline
+      widget: string
+    - name: intro
+      label: Homepage introduction
+      widget: text
+    - name: availability
+      label: Collaboration availability
+      widget: text
+    - name: cv_url
+      label: CV PDF
+      widget: file
+      media_folder: /static/uploads/helamouri
+      public_folder: /uploads/helamouri
+      hint: Upload a PDF or select one from the media library. This updates the CV link throughout the site.
+      allow_multiple: false
+    - name: research_heading
+      label: Research Heading
+      widget: string
+    - name: research_intro
+      label: Research Intro
+      widget: text
+    - name: experience
+      label: Experience
+      widget: list
+      fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: organization
+        label: Organization
+        widget: string
+      - name: location
+        label: Location
+        widget: string
+      - name: period
+        label: Dates (for example September 2025–present)
+        widget: string
+      - name: description
+        label: Description
+        widget: text
+    - name: teaching_intro
+      label: Teaching Intro
+      widget: text
+    - name: courses
+      label: Courses
+      widget: list
+      field:
+        name: value
+        label: Value
+        widget: string
+    - name: supervision
+      label: Supervision
+      widget: list
+      fields:
+      - name: title
+        label: Project title
+        widget: string
+      - name: institution
+        label: Institution
+        widget: string
+      - name: period
+        label: Period
+        widget: string
+      - name: status
+        label: Status
+        widget: select
+        options:
+        - Ongoing
+        - Completed
+      - name: description
+        label: Description
+        widget: text
+    - name: writing_intro
+      label: Writing Intro
+      widget: text
+    - name: medium_url
+      label: Medium profile URL
+      widget: string
+      required: false
+      hint: Leave empty until you have a public Medium profile. Use a full https:// URL.
+    - name: contact_heading
+      label: Contact Heading
+      widget: string
+    - name: contact_text
+      label: Contact Text
+      widget: text
+    - name: email
+      label: Contact email
+      widget: string
+      pattern:
+      - ^[^\s@]+@[^\s@]+\.[^\s@]+$
+      - Enter a valid email address
+    - name: contact_form
+      label: Show contact form
+      widget: boolean
+      default: true
+- name: profile
+  label: Biography & education
+  files:
+  - name: hussein
+    label: Hussein El Amouri
+    file: content/authors/helamouri/_index.md
+    fields:
+    - name: title
+      label: Display name
+      widget: string
+    - name: first_name
+      label: First Name
+      widget: string
+    - name: last_name
+      label: Last Name
+      widget: string
+    - name: role
+      label: Role / tagline
+      widget: string
+    - name: avatar
+      label: Portrait photo
+      widget: image
+      required: false
+      media_folder: /static/uploads/helamouri
+      public_folder: /uploads/helamouri
+      hint: Upload a portrait or leave blank to use the existing photograph.
+    - name: bio
+      label: Short bio
+      widget: text
+      required: false
+    - name: superuser
+      label: Superuser
+      widget: hidden
+      default: true
+    - name: organizations
+      label: Organizations
+      widget: list
+      fields:
+      - name: name
+        label: Name
+        widget: string
+      - name: url
+        label: Website
+        widget: string
+        required: false
+    - name: interests
+      label: Interests
+      widget: list
+      field:
+        name: value
+        label: Value
+        widget: string
+    - name: education
+      label: Education
+      widget: object
+      fields:
+      - name: courses
+        label: Courses
+        widget: list
+        fields:
+        - name: course
+          label: Degree
+          widget: string
+        - name: institution
+          label: Institution
+          widget: string
+        - name: year
+          label: Year
+          widget: number
+          value_type: int
+    - name: skills
+      label: Skills
+      widget: list
+      fields:
+      - name: name
+        label: Category
+        widget: string
+      - name: items
+        label: Items
+        widget: list
+        fields:
+        - name: name
+          label: Tools / skills
+          widget: string
+    - name: social
+      label: Social
+      widget: list
+      fields:
+      - name: icon
+        label: Icon
+        widget: select
+        options:
+        - envelope
+        - graduation-cap
+        - github
+        - linkedin
+        - cv
+      - name: icon_pack
+        label: Icon pack
+        widget: select
+        options:
+        - fas
+        - fab
+        - ai
+      - name: link
+        label: Link
+        widget: string
+    - name: body
+      label: Full biography
+      widget: markdown
+- name: publication
+  label: Publications
+  folder: content/publication
+  create: true
+  delete: true
+  path: '{{slug}}/index'
+  format: yaml-frontmatter
+  extension: md
+  slug: '{{slug}}'
+  preview_path: publication/{{slug}}/
+  fields:
+  - &id001
+    name: title
+    label: Title
+    widget: string
+  - &id002
+    name: date
+    label: Date
+    widget: datetime
+    format: YYYY-MM-DD
+    date_format: YYYY-MM-DD
+    time_format: false
+  - &id003
+    name: draft
+    label: Hide from public site
+    widget: boolean
+    required: false
+    default: false
+    hint: Enable only to keep an entry hidden even after publishing it through the editor.
+  - &id004
+    name: summary
+    label: Short description
+    widget: text
+    required: false
+  - &id005
+    name: tags
+    label: Topics
+    widget: list
+    required: false
+  - name: publication
+    label: Journal / conference
+    widget: string
+  - name: publication_types
+    label: Publication type
+    widget: select
+    multiple: true
+    options:
+    - label: Journal article
+      value: article-journal
+    - label: Conference paper
+      value: paper-conference
+    - label: Preprint / working paper
+      value: manuscript
+    - label: Thesis
+      value: thesis
+  - name: date_precision
+    label: Date accuracy
+    widget: select
+    required: false
+    options:
+    - day
+    - year
+    default: day
+    hint: Select year if only the publication year is known.
+  - name: authors
+    label: Authors
+    widget: list
+    required: false
+    hint: Enter the names as they appear on the paper; do not guess missing authors.
+  - name: doi
+    label: DOI
+    widget: string
+    required: false
+    hint: For example 10.1016/j.patcog.2023.109804; a DOI URL also works.
+  - name: abstract
+    label: Abstract
+    widget: text
+    required: false
+  - name: featured
+    label: Featured
+    widget: boolean
+    required: false
+    default: false
+  - name: url_pdf
+    label: PDF link
+    widget: string
+    required: false
+  - name: url_code
+    label: Code link
+    widget: string
+    required: false
+  - name: url_dataset
+    label: Dataset link
+    widget: string
+    required: false
+  - name: url_project
+    label: Project link
+    widget: string
+    required: false
+  - name: url_video
+    label: Video link
+    widget: string
+    required: false
+  - name: url_slides
+    label: Slides link
+    widget: string
+    required: false
+  - &id006
+    name: body
+    label: Main text
+    widget: markdown
+    required: false
+  summary: '{{title}}'
+- name: project
+  label: Research projects
+  folder: content/project
+  create: true
+  delete: true
+  path: '{{slug}}/index'
+  format: yaml-frontmatter
+  extension: md
+  slug: '{{slug}}'
+  preview_path: project/{{slug}}/
+  fields:
+  - *id001
+  - *id002
+  - *id003
+  - *id004
+  - *id005
+  - name: status
+    label: Research status
+    widget: select
+    options:
+    - Ongoing research
+    - Manuscript under revision
+    - Published research
+    - Completed project
+  - name: url_code
+    label: Code link
+    widget: string
+    required: false
+  - name: external_link
+    label: External project URL
+    widget: string
+    required: false
+  - *id006
+  summary: '{{title}}'
+- name: post
+  label: Notes & ideas
+  folder: content/post
+  create: true
+  delete: true
+  path: '{{slug}}/index'
+  format: yaml-frontmatter
+  extension: md
+  slug: '{{slug}}'
+  preview_path: post/{{slug}}/
+  fields:
+  - *id001
+  - *id002
+  - *id003
+  - *id004
+  - *id005
+  - name: external_link
+    label: Medium / external article URL
+    widget: string
+    required: false
+    hint: Leave blank for a post hosted here. For Medium, add its full https:// URL; the homepage and notes archive link to it directly.
+  - *id006
+  summary: '{{title}}'

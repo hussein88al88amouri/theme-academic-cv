@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="universal-wrapper pt-5">
+  {{ if .Params.superuser }}
+    {{ with .Params.avatar }}
+      <img class="avatar avatar-circle" src="{{ . | relURL }}" alt="Portrait of {{ $.Title }}" width="270" height="270" style="margin:0 auto 2rem;object-fit:cover">
+    {{ else }}
+      {{ with .Resources.GetMatch "avatar.*" }}{{ $portrait := .Fill "270x270 Center" }}
+        <img class="avatar avatar-circle" src="{{ $portrait.RelPermalink }}" alt="Portrait of {{ $.Title }}" width="270" height="270" style="margin:0 auto 2rem">
+      {{ end }}
+    {{ end }}
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Params.role }}</p>
+    {{ range .Params.organizations }}<p>{{ with .url }}<a href="{{ . }}">{{ end }}{{ .name }}{{ if .url }}</a>{{ end }}</p>{{ end }}
+    <div class="article-style">{{ .Content }}</div>
+    {{ partial "social_links" . }}
+    <h2>Research interests</h2><ul>{{ range .Params.interests }}<li>{{ . }}</li>{{ end }}</ul>
+    <h2>Education</h2><ul>{{ range .Params.education.courses }}<li><strong>{{ .course }}</strong> · {{ .institution }} · {{ .year }}</li>{{ end }}</ul>
+  {{ else }}
+    <h1>{{ .Title }}</h1>
+    {{ range .Pages }}<p><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>{{ end }}
+  {{ end }}
+</section>
+{{ end }}

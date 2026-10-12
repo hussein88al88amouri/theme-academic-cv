@@ -7,7 +7,7 @@ title: "Constrained DTW preserving shapelets for explainable time-series cluster
 # - ""
 # - ""
 date: "2023-09-01T00:00:00Z"
-doi: "https://doi.org/10.1016/j.patcog.2023.109804"
+doi: "10.1016/j.patcog.2023.109804"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: ""
@@ -18,7 +18,7 @@ publishDate: ""
 publication_types: ["article-journal"]
 
 # Publication name and optional abbreviated publication name.
-publication: "*Pattern Recongintion*"
+publication: "*Pattern Recognition*"
 publication_short: ""
 
 abstract: "<p style='text-align: justify;'>The analysis of time series is becoming ever more popular due to the proliferation of sensors. A well-known similarity measure for time-series is Dynamic Time Warping (DTW), which does not respect the axioms of a metric. These, however, can be reintroduced through Learning DTW-Preserving Shapelets (LDPS). This article extends LDPS and presents constrained DTW-preserving shapelets (CDPS). CDPS directs the time-series representation to captures the user’s interpretation of the data by considering a limited amount of user knowledge in the from of must-link- cannot link constraints. Subsequently, unconstrained algorithms can be used to generate a clustering that respects the constraints without explicit knowledge of them. Out-of-sample data can be transformed into this space, overcoming the limitations of traditional transductive constrained-clustering algorithms. Furthermore, several Shapelet Cluster Explanation (SCE) approaches are proposed that explain the clustering and can simplify the representation while preserving clustering performance. State-of-the-art performance is demonstrated on multiple time-series datasets and an open-source implementation will be made publicly available upon acceptance.</p>"

@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  {{ $cv := site.Data.portfolio.cv_url | relURL }}
+  <meta http-equiv="refresh" content="0; url={{ $cv }}">
+  <title>Hussein El Amouri · CV</title>
+</head>
+<body><p><a href="{{ site.Data.portfolio.cv_url | relURL }}">Open the latest CV (PDF)</a></p><p><a href="{{ "/" | relURL }}">Return to website</a></p></body>
+</html>

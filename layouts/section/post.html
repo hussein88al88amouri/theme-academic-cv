@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="universal-wrapper">
+  <h1>{{ .Title }}</h1>
+  <div class="article-style">{{ .Content }}</div>
+  {{ range .Pages }}
+  <article style="margin:2rem 0;padding-bottom:1.5rem;border-bottom:1px solid #52606b">
+    <p>{{ .Date.Format "02 Jan 2006" }}{{ with .Params.external_link }} · External essay{{ end }}</p>
+    <h2><a href="{{ .Params.external_link | default .RelPermalink }}">{{ .Title }}</a></h2>
+    <p>{{ .Params.summary | default (.Summary | plainify | truncate 180) }}</p>
+    <a href="{{ .Params.external_link | default .RelPermalink }}">Read the note ↗</a>
+  </article>
+  {{ else }}<p>There are no published notes here yet.</p>{{ end }}
+</div>
+{{ end }}

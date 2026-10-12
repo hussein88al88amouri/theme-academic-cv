@@ -1,33 +1,14 @@
 ---
 title: Constrained DTW Preserving Shapelets
-summary: An example on how to use code published for CDPS algorithm with a use case study on couple examples.
+summary: Learning time-series representations that incorporate expert constraints while preserving Dynamic Time Warping relationships.
+date: '2023-09-01'
 tags:
-  - CDPS
-date: '2023' # -04-27T00:00:00Z'
-
-# Optional external URL for project (replaces project detail page).
-external_link: ''
-
-image:
-  caption: Photo by rawpixel on Unsplash
-  focal_point: Smart
-
-links:
-  - icon: twitter
-    icon_pack: fab
-    name: Follow
-    url: https://twitter.com/georgecushen
-url_code: ''
-url_pdf: ''
-url_slides: ''
-url_video: ''
-
-# Slides (optional).
-#   Associate this project with Markdown slides.
-#   Simply enter your slide deck's filename without extension.
-#   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
-#   Otherwise, set `slides = ""`.
-slides: example
+- Time series
+- Constrained clustering
+status: Published research
+url_code: https://github.com/hussein88al88amouri/Learning-Explainable-Constrained-Transformation-For-Time-Series-Data
 ---
 
-Constrained DTW Preserving shapelets ....;
+CDPS integrates must-link and cannot-link constraints into a shapelet-based time-series representation. It supports clustering with expert knowledge and transforming out-of-sample data.
+
+See the [Pattern Recognition paper](/publication/cdpssce/) for the method and evaluation.

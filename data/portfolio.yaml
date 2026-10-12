@@ -1,0 +1,56 @@
+eyebrow: Machine learning · Time series · Limited supervision
+headline: Learning from less. Understanding more.
+intro: I study how expert knowledge and limited labels can make machine learning more useful and interpretable—from constrained clustering to seizure detection.
+availability: Open to research collaborations, academic opportunities & industry R&D
+cv_url: /uploads/helamouri/resume.pdf
+research_heading: Questions driving my research
+research_intro: From understanding which constraints help clustering to learning with scarce labels in healthcare.
+experience:
+- title: Assistant Professor & Researcher
+  organization: University of Sciences and Arts in Lebanon (USAL)
+  location: Lebanon
+  period: September 2025–present
+  description: Teaching data structures, advanced data structures, introductory Java programming, and networks. Research on constrained clustering quality and diffusion-based learning for seizure detection.
+- title: Research Assistant
+  organization: ICube Laboratory, University of Strasbourg
+  location: France
+  period: 2023–2025
+  description: Active learning for incremental constrained clustering of time-series and remote-sensing data, building on CDPS and SCE.
+- title: PhD Researcher
+  organization: ICube Laboratory, University of Strasbourg
+  location: France
+  period: 2020–2023
+  description: Interpretable time-series representations integrating expert knowledge for clustering, using shapelets, contrastive learning, and Siamese networks.
+- title: Lecturer
+  organization: University of Strasbourg
+  location: France
+  period: 2020–2024
+  description: Linux tools and scripting; reading and discussing computer science research in English; coaching an AI hackathon.
+- title: Research Intern · Speech Synthesis
+  organization: GIPSA-LAB, Grenoble
+  location: France
+  period: '2020'
+  description: Benchmarking how autoregressive, source-filter, flow, and GAN vocoders extrapolate to unseen pitch values.
+- title: Telecommunication Engineering Intern
+  organization: Ogero Center, Beirut
+  location: Lebanon
+  period: '2019'
+  description: Telecommunication architecture and protocols.
+supervision:
+- title: Community Aware Coded Caching
+  institution: Lebanese University · Master’s project
+  period: February–September 2026
+  status: Completed
+  description: Supervision of a master’s student working on community-aware coded caching.
+teaching_intro: Supporting students from their first programs to independent research.
+courses:
+- Introduction to Programming with Java
+- Data Structures
+- Advanced Data Structures
+- Networks
+writing_intro: Research notes, open questions, and thoughts on machine learning. Longer essays can also be shared on Medium.
+medium_url: ''
+contact_heading: Let’s explore a research question together.
+contact_text: For research collaborations, academic opportunities, or industry R&D, tell me what you are working on and where our interests connect.
+email: alamourihusein@gmail.com
+contact_form: true

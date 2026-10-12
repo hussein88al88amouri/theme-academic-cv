@@ -3,17 +3,17 @@ name="night"
 
 [dark]
     # Primary 
-    primary="#000000"
+    primary="#83dcc8"
 
     # Menu
-    menu_primary="#000000"
+    menu_primary="#111c27"
     menu_text="#ffffff"
-    menu_text_active="#eeeeee"
+    menu_text_active="#83dcc8"
     menu_title="#ffffff"
 
     # Home sections
-    home_section_odd="#000000"
-    home_section_even= "#111111"
+    home_section_odd="#111c27"
+    home_section_even="#182632"
 
-    link="#eeeeee"
-    link_hover="#ffffff"
+    link="#83dcc8"
+    link_hover="#b0eddf"
