@@ -4,9 +4,9 @@ backend:
   branch: main
   base_url: https://api.netlify.com
   auth_endpoint: auth
+  site_domain: hussein-el-amouri.netlify.app
 site_url: https://hussein-el-amouri.netlify.app
 display_url: https://hussein-el-amouri.netlify.app
-site_domain: hussein-el-amouri.netlify.app
 logo_url: /admin/logo.svg
 publish_mode: editorial_workflow
 media_folder: static/uploads

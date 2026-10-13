@@ -118,6 +118,21 @@ with sync_playwright() as p:
  page.get_by_role('button',name='Login with GitHub').wait_for(timeout=30000)
  assert 'Error loading the CMS configuration' not in page.locator('body').inner_text()
  page.screenshot(path=str(Path(args.screenshots)/'admin.png'),full_page=True)
+ # Exercise the actual login button while intercepting OAuth; do not perform a live login.
+ from urllib.parse import urlparse, parse_qs
+ oauth_urls=[]
+ def oauth_request(route):
+  oauth_urls.append(route.request.url)
+  route.fulfill(body='OAuth target test only',content_type='text/plain')
+ page.context.route('https://api.netlify.com/auth**',oauth_request)
+ with page.expect_popup() as popup:
+  page.get_by_role('button',name='Login with GitHub').click()
+ popup.value.wait_for_load_state('domcontentloaded')
+ assert oauth_urls
+ query=parse_qs(urlparse(oauth_urls[0]).query)
+ assert query['site_id']==['hussein-el-amouri.netlify.app']
+ assert query['provider']==['github']
+ popup.value.close()
  assert not errors, errors
  print('PASS: production homepage; publications and research projects; search/year/empty-state behavior; CV download; contact submission/error/retry with a controlled receiver; mobile navigation/layout; reduced motion; CMS configuration and GitHub login screen; no JavaScript exceptions.')
  browser.close()

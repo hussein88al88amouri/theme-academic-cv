@@ -37,3 +37,6 @@ If **Login with GitHub** fails, the Netlify OAuth provider has not yet been conf
 5. Open `/admin/`, sign in with your repository-owner GitHub account, save a small draft, publish, and confirm Netlify's deploy succeeds.
 
 This one-time setup requires the site owner's accounts. The repository's Git proxy access does not configure Netlify login automatically. No database is needed for browser content editing.
+
+
+If the sign-in popup shows `api.netlify.com/auth Not Found`, first confirm the deployed `admin/config.yml` has `site_domain: hussein-el-amouri.netlify.app` **inside `backend`**. Decap ignores that setting at the top level. If the target is correct, verify the GitHub OAuth provider is installed on this exact Netlify project and its callback URL is `https://api.netlify.com/auth/done`. A correct target URL does not establish that the account-level provider exists.
