@@ -1,6 +1,6 @@
 # Edit your website directly in the browser
 
-Open **https://hussein-el-amouri.netlify.app/admin/** or click **Edit website** in the footer. Homepage, publication, project, author, and article pages also have **Edit this page** shortcuts.
+Bookmark **https://hussein-el-amouri.netlify.app/admin/** to access the editor directly. Public pages have no editing links. Sign in with your authorized GitHub account to edit; the unlisted address alone does not grant access. Use **View public website** inside the dashboard to open the visitor view in another tab.
 
 Sign in with **Login with GitHub**. GitHub stores changes behind the scenes; you do not need to visit its file editor. Only accounts with repository write permission can publish changes.
 

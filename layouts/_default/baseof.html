@@ -6,7 +6,7 @@
   {{ partial "portfolio/header.html" . }}
   <main id="main" class="section-shell detail-main">
     <a class="text-link back-link" href="{{ "" | relURL }}">← {{ site.Data.portfolio.ui.back_portfolio }}</a>
-    {{ partial "portfolio/edit-link.html" . }}
+
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "portfolio/footer.html" . }}

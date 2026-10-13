@@ -1,3 +1,3 @@
 {{ $p := site.Data.portfolio }}
 {{ $author := site.GetPage "/authors/helamouri" }}
-<footer class="portfolio-footer section-shell"><p>© {{ now.Year }} {{ $author.Title }}</p><div><a href="{{ "post/index.xml" | relURL }}">{{ $p.ui.footer_rss }}</a><a class="owner-editor-link" href="{{ "admin/" | relURL }}">{{ $p.ui.footer_edit }}</a><a href="{{ if .IsHome }}#top{{ else }}{{ "#top" | relURL }}{{ end }}">{{ $p.ui.footer_top }} ↑</a></div></footer>
+<footer class="portfolio-footer section-shell"><p>© {{ now.Year }} {{ $author.Title }}</p><div><a href="{{ "post/index.xml" | relURL }}">{{ $p.ui.footer_rss }}</a><a href="{{ if .IsHome }}#top{{ else }}{{ "#top" | relURL }}{{ end }}">{{ $p.ui.footer_top }} ↑</a></div></footer>

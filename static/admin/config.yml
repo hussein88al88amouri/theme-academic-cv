@@ -294,9 +294,6 @@ collections:
       - name: footer_rss
         label: Footer Rss
         widget: string
-      - name: footer_edit
-        label: Footer Edit
-        widget: string
       - name: footer_top
         label: Footer Top
         widget: string
@@ -371,9 +368,6 @@ collections:
         widget: string
       - name: social_linkedin
         label: Social Linkedin
-        widget: string
-      - name: edit_page
-        label: Edit Page
         widget: string
       - name: site_tagline
         label: Site Tagline

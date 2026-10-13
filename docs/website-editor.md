@@ -1,6 +1,6 @@
 # Website development and browser editing
 
-For everyday editing, open **https://hussein-el-amouri.netlify.app/admin/** or click **Edit website**. Follow [Browser editing guide](browser-editing.md) for all dashboard controls and the one-time GitHub OAuth setup. You do not need GitHub's file editor for routine changes.
+For everyday editing, open **https://hussein-el-amouri.netlify.app/admin/** using your bookmark. Follow [Browser editing guide](browser-editing.md) for all dashboard controls and the one-time GitHub OAuth setup. You do not need GitHub's file editor for routine changes.
 
 ## Contact
 

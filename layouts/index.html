@@ -16,7 +16,7 @@
         <p class="hero-role">{{ $author.Params.role }}<br>{{ range $author.Params.organizations }}{{ .name }}{{ end }}</p>
         <p class="hero-intro">{{ $p.intro }}</p>
         <div class="actions"><a class="button button-primary" href="#research">{{ $p.ui.hero_research_button }} <span aria-hidden="true">↘</span></a><a class="button button-quiet" href="{{ $cv }}">{{ $p.ui.hero_cv_button }} <span aria-hidden="true">↗</span></a></div>
-        {{ partial "portfolio/edit-link.html" . }}
+
         <p class="availability">{{ $p.availability }}</p>
       </div>
       <div class="hero-visual">

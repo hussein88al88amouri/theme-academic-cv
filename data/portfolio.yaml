@@ -102,7 +102,6 @@ ui:
   contact_button: Send message
   contact_direct: Prefer email? You can contact me directly using the address above.
   footer_rss: RSS
-  footer_edit: Edit website
   footer_top: Back to top
   back_portfolio: Back to portfolio
   research_project: Research project
@@ -128,7 +127,6 @@ ui:
   social_scholar: Google Scholar
   social_github: GitHub
   social_linkedin: LinkedIn
-  edit_page: Edit this page
   site_tagline: Research & Teaching
   cv_title: Curriculum vitae
   cv_open: Open the latest CV (PDF)

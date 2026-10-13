@@ -15,6 +15,7 @@ with sync_playwright() as p:
  page.on('pageerror',lambda e:errors.append(str(e)))
  page.goto(base+'/',wait_until='networkidle')
  assert page.locator('h1').inner_text().strip()
+ assert page.locator('a[href*="/admin/"]').count()==0
  from urllib.parse import urljoin
  cv_response=page.request.get(urljoin(base+'/',page.locator('.nav-cv').get_attribute('href')))
  assert cv_response.ok
@@ -77,6 +78,7 @@ with sync_playwright() as p:
   assert page.locator('.portfolio-header').count()==1
   assert page.locator('.portfolio-footer').count()==1
   assert page.locator('.detail-main').count()==1
+  assert page.locator('a[href*="/admin/"]').count()==0
   assert page.locator('h1').inner_text().strip()
   assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth')
   assert page.locator('link[rel="canonical"]').get_attribute('href').startswith('https://hussein-el-amouri.netlify.app/')
