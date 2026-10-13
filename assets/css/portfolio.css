@@ -38,8 +38,6 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
 .portrait-frame img{width:100%;height:auto;object-fit:contain;filter:none}
 .portrait-frame[data-crop="square"] img{aspect-ratio:1;object-fit:cover}
 .portrait-caption{width:100%;margin:14px 0 0;padding:0;border:0;border-radius:0;background:none;box-shadow:none;font-size:.85rem}
-.form-status{font-size:.85rem;color:var(--ink)!important;margin:16px 0 0}
-.form-status[data-state="error"]{color:#ffb7ad!important}
 .portrait-frame[data-crop="circle"]{aspect-ratio:1;border-radius:50%}
 .portrait-frame[data-crop="circle"] img{width:100%;height:100%;object-fit:cover;object-position:center 45%}
 .detail-main{min-height:65vh;padding-block:42px 85px}
@@ -69,3 +67,4 @@ html{scroll-behavior:smooth;scroll-padding-top:100px}
 .context-editor-link{display:inline-block;margin:18px 0}
 .detail-main>.context-editor-link{float:right;margin:0 0 20px 16px}
 @media(max-width:520px){.detail-main>.context-editor-link{float:none;margin:0 0 24px;display:block;width:fit-content}}
+.contact-grid[data-mode="email"]{grid-template-columns:1fr;max-width:760px}

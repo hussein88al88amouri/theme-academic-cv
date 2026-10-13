@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Website editor · Sign-in help</title>
+<style>body{margin:0;background:#111c27;color:#e9eff3;font:16px/1.7 system-ui,sans-serif}main{max-width:760px;margin:60px auto;padding:24px}h1{font-size:2rem;line-height:1.2}a{color:#83dcc8}li{margin:12px 0}code{overflow-wrap:anywhere;background:#182632;padding:3px 6px;border-radius:4px}.note{padding:20px;background:#182632;border-radius:12px}a:focus-visible{outline:3px solid #83dcc8;outline-offset:4px}</style>
+</head>
+<body><main>
+<p><a href="./">← Open editor</a> · <a href="../">Return to website</a></p>
+<h1>Edit your website from the browser</h1>
+<p>Sign in with your repository-owner GitHub account. Once signed in, edit your biography, interests, picture, publications, projects, posts, headings, navigation, and colors. Save a draft, review it, then publish. Netlify rebuilds the website after publication.</p>
+<h2>If sign-in shows “api.netlify.com/auth Not Found”</h2>
+<p>The editor uses GitHub authorization through your existing Netlify project. This requires a one-time account setup:</p>
+<ol>
+<li>In GitHub, open <strong>Settings → Developer settings → OAuth Apps → New OAuth App</strong>.</li>
+<li>Set the homepage to <code>https://hussein-el-amouri.netlify.app</code> and callback URL to <code>https://api.netlify.com/auth/done</code>.</li>
+<li>In the existing Netlify project's security/access configuration, find <strong>OAuth / Authentication providers</strong> and configure GitHub using that app's client ID and client secret. Enter the secret only in Netlify's secure settings.</li>
+<li>Confirm the Netlify project is linked to <code>hussein88al88amouri/theme-academic-cv</code>, branch <code>main</code>. Deploy the latest commit.</li>
+<li>Return to <a href="https://hussein-el-amouri.netlify.app/admin/">the primary editor address</a>, refresh, and choose <strong>Login with GitHub</strong>.</li>
+</ol>
+<p class="note">The login target must identify <code>hussein-el-amouri.netlify.app</code>. The deployed configuration places this under <code>backend.site_domain</code>. If a login popup is blocked, allow popups for this site. Only accounts with repository write permission can publish.</p>
+<h2>Contact settings</h2>
+<p>The public site uses a direct email link by default. No message boxes or email-service credentials are needed. An optional Netlify contact form can be enabled in Homepage & career; its form detection and notifications are configured separately in Netlify.</p>
+</main></body></html>

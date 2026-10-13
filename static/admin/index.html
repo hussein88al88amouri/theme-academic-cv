@@ -7,10 +7,11 @@
   <title>Edit Hussein El Amouri’s website</title>
   <link rel="icon" type="image/svg+xml" href="logo.svg">
   <link href="config.yml" type="text/yaml" rel="cms-config-url">
-  <style>body{margin:0;font:15px/1.6 system-ui,sans-serif;background:#f5f7fa;color:#233044}#editor-status{max-width:700px;margin:60px auto;padding:24px}#editor-status a{color:#165b88}</style>
+  <style>body{margin:0;font:15px/1.6 system-ui,sans-serif;background:#f5f7fa;color:#233044}#editor-status{max-width:700px;margin:60px auto;padding:24px}#editor-status a{color:#165b88} #dashboard-help{position:fixed;bottom:10px;right:12px;z-index:9999;background:#fff;border:1px solid #c5ced8;border-radius:8px;padding:8px 12px;font:13px/1.5 system-ui,sans-serif}#dashboard-help a{color:#165b88}</style>
 </head>
 <body>
-  <div id="editor-status" role="status">Loading your website editor…<p>If the editor does not load, check your connection and reload this page. Login setup is described in the repository’s <strong>docs/website-editor.md</strong>.</p><a href="/">Return to website</a></div>
+  <div id="editor-status" role="status">Loading your website editor…<p>If the editor does not load, check your connection and reload this page. <a href="setup.html">Open sign-in and editing help</a>.</p><a href="../">Return to website</a></div>
+  <aside id="dashboard-help"><a href="setup.html">Sign-in / editing help</a> · <a href="../">Website</a></aside>
   <noscript>The website editor requires JavaScript. Enable JavaScript and reload this page.</noscript>
   <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.16.3/dist/decap-cms.js" onload="document.getElementById('editor-status').hidden=true" onerror="document.getElementById('editor-status').firstChild.textContent='The editor could not be downloaded. Check your connection and reload.'"></script>
 </body>

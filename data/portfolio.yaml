@@ -53,12 +53,11 @@ medium_url: ''
 contact_heading: Let’s explore a research question together.
 contact_text: For research collaborations, academic opportunities, or industry R&D, tell me what you are working on and where our interests connect.
 email: alamourihusein@gmail.com
-contact_form: true
+contact_form: false
 about_heading: Research, teaching, and collaboration
 portrait_crop: circle
 portrait_caption: ''
 writing_linkedin_url: https://www.linkedin.com/in/hussein-el-amouri-0b24a0165/
-contact_submit_url: https://hussein-el-amouri.netlify.app/.netlify/functions/contact
 primary_site_url: https://hussein-el-amouri.netlify.app/
 ui:
   skip_link: Skip to content
@@ -102,10 +101,6 @@ ui:
   contact_message: Message
   contact_button: Send message
   contact_direct: Prefer email? You can contact me directly using the address above.
-  contact_sending: Submitting your message…
-  contact_success: Your message has been submitted for email delivery. Thank you.
-  contact_error: Your message could not be submitted. Please try again or use the email link.
-  contact_retained: Your text has been kept.
   footer_rss: RSS
   footer_edit: Edit website
   footer_top: Back to top

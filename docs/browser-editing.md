@@ -24,7 +24,7 @@ To add an article, open **Publications → New**, complete the fields, and use t
 
 **Save** makes a draft. Review it, mark it ready, then use **Publish**. Netlify rebuilds the public website after publication; updates are not instant. The **Hide from public site** checkbox keeps an entry hidden even if its underlying change has been published.
 
-The dashboard edits registered content and assets. Application code, email credentials, and Netlify deployment/account settings are configured separately. Existing SVG diagram labels are part of an image; replace the figure to change the drawing, or edit its caption/description directly.
+The dashboard edits registered content and assets. Application code and Netlify deployment/account settings are configured separately. Existing SVG diagram labels are part of an image; replace the figure to change the drawing, or edit its caption/description directly.
 
 ## One-time sign-in setup
 
@@ -40,3 +40,6 @@ This one-time setup requires the site owner's accounts. The repository's Git pro
 
 
 If the sign-in popup shows `api.netlify.com/auth Not Found`, first confirm the deployed `admin/config.yml` has `site_domain: hussein-el-amouri.netlify.app` **inside `backend`**. Decap ignores that setting at the top level. If the target is correct, verify the GitHub OAuth provider is installed on this exact Netlify project and its callback URL is `https://api.netlify.com/auth/done`. A correct target URL does not establish that the account-level provider exists.
+
+
+Contact now uses a direct email link without form fields by default. An optional Netlify Forms contact form can be enabled in **Homepage & career**; configure form detection and notifications in Netlify before using it. No external email service is used. For sign-in troubleshooting, open the website’s `/admin/setup.html` help page.

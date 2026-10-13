@@ -1,11 +1,9 @@
 [build]
   command = "hugo --gc --minify"
   publish = "public"
-  functions = "netlify/functions"
 
 [build.environment]
   HUGO_VERSION = "0.119.0"
-  NODE_VERSION = "22"
   HUGO_ENABLEGITINFO = "true"
 
 [context.production.environment]

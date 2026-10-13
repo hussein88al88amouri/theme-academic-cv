@@ -38,36 +38,10 @@ with sync_playwright() as p:
  assert page.locator('[data-publication]:visible').count()==expected
  page.locator('#publication-year').select_option('all')
  assert page.locator('[data-publication]:visible').count()==total
- assert not page.locator('.contact-form').evaluate('(f) => f.checkValidity()')
- page.locator('#contact-name').fill('Test researcher')
- page.locator('#contact-email').fill('researcher@example.com')
- page.locator('#contact-subject').fill('Research collaboration')
- page.locator('#contact-message').fill('Research collaboration')
- assert page.locator('.contact-form').evaluate('(f) => f.checkValidity()')
- # Exercise a controlled form receiver without sending a real email.
- from urllib.parse import parse_qs
- endpoint=base+'/contact/thanks/'
- page.locator('.contact-form').evaluate('(form, url)=>form.action=url',endpoint)
- submissions=[]
- def failed_submission(route):
-  submissions.append(parse_qs(route.request.post_data))
-  route.fulfill(status=500,body='Submission unavailable')
- page.route(endpoint,failed_submission)
- page.get_by_role('button',name='Send message').click()
- page.locator('.form-status[data-state="error"]').wait_for()
- assert page.locator('#contact-message').input_value()=='Research collaboration'
- assert page.locator('#contact-subject').input_value()=='Research collaboration'
- assert page.get_by_role('button',name='Send message').is_enabled()
- page.unroute(endpoint,failed_submission)
- page.route(endpoint,lambda route:route.fulfill(status=202,body='{"accepted":true}',content_type='application/json'))
- page.get_by_role('button',name='Send message').click()
- page.locator('.form-status[data-state="success"]').wait_for()
- assert page.locator('#contact-message').input_value()==''
- assert submissions[0]['email']==['researcher@example.com']
- assert submissions[0]['subject']==['Research collaboration']
- assert submissions[0]['message']==['Research collaboration']
- assert submissions[0]['form-name']==['research-contact']
- page.unroute(endpoint)
+ assert page.locator('.contact-form').count()==0
+ assert page.locator('.contact-email').get_attribute('href')=='mailto:alamourihusein@gmail.com'
+ assert page.locator('#contact-email').count()==0
+ assert page.locator('#contact-message').count()==0
  page.set_viewport_size({'width':390,'height':844})
  page.goto(base+'/',wait_until='networkidle')
  assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth')
@@ -134,5 +108,5 @@ with sync_playwright() as p:
  assert query['provider']==['github']
  popup.value.close()
  assert not errors, errors
- print('PASS: production homepage; publications and research projects; search/year/empty-state behavior; CV download; contact submission/error/retry with a controlled receiver; mobile navigation/layout; reduced motion; CMS configuration and GitHub login screen; no JavaScript exceptions.')
+ print('PASS: production homepage; publications and research projects; search/year/empty-state behavior; CV download; direct mailto contact without message boxes; mobile navigation/layout; reduced motion; CMS configuration and GitHub login screen; no JavaScript exceptions.')
  browser.close()

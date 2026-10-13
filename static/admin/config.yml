@@ -7,7 +7,7 @@ backend:
   site_domain: hussein-el-amouri.netlify.app
 site_url: https://hussein-el-amouri.netlify.app
 display_url: https://hussein-el-amouri.netlify.app
-logo_url: /admin/logo.svg
+logo_url: logo.svg
 publish_mode: editorial_workflow
 media_folder: static/uploads
 public_folder: /uploads
@@ -121,9 +121,10 @@ collections:
       - ^[^\s@]+@[^\s@]+\.[^\s@]+$
       - Enter a valid email address
     - name: contact_form
-      label: Show contact form
+      label: Enable optional Netlify contact form
       widget: boolean
-      default: true
+      default: false
+      hint: Leave off to show only the direct email link. If enabled, configure Netlify form detection and notifications in your Netlify project.
     - name: about_heading
       label: About section heading
       widget: string
@@ -147,10 +148,6 @@ collections:
       label: LinkedIn writing profile
       widget: string
       required: false
-    - name: contact_submit_url
-      label: Contact form submission URL
-      widget: string
-      hint: Use the primary Netlify URL followed by /.netlify/functions/contact. Brevo API key and verified sender must be configured securely in Netlify.
     - name: primary_site_url
       label: Primary website address
       widget: string
@@ -293,18 +290,6 @@ collections:
         widget: string
       - name: contact_direct
         label: Contact Direct
-        widget: string
-      - name: contact_sending
-        label: Contact Sending
-        widget: string
-      - name: contact_success
-        label: Contact Success
-        widget: string
-      - name: contact_error
-        label: Contact Error
-        widget: string
-      - name: contact_retained
-        label: Contact Retained
         widget: string
       - name: footer_rss
         label: Footer Rss

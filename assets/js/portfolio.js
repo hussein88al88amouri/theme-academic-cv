@@ -1,43 +1,4 @@
 (() => {
-  const contactForm = document.querySelector('.contact-form');
-  contactForm?.addEventListener('submit', async event => {
-    // Native cross-origin submission also works from GitHub Pages without CORS.
-    if (new URL(contactForm.action).origin !== window.location.origin) return;
-    event.preventDefault();
-    if (!contactForm.reportValidity()) return;
-    const status = contactForm.querySelector('.form-status');
-    const button = contactForm.querySelector('button[type="submit"]');
-    const controller = new AbortController();
-    const timeout = window.setTimeout(() => controller.abort(), 20000);
-    button.disabled = true;
-    status.hidden = false;
-    status.dataset.state = 'sending';
-    status.textContent = contactForm.dataset.sending;
-    try {
-      const response = await fetch(contactForm.action, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded', Accept: 'application/json' },
-        body: new URLSearchParams(new FormData(contactForm)).toString(),
-        signal: controller.signal,
-      });
-      const receipt = await response.json().catch(() => null);
-      if (!response.ok || receipt?.accepted !== true) {
-        const failure = new Error('Submission was not accepted');
-        failure.publicMessage = typeof receipt?.message === 'string' ? receipt.message : '';
-        throw failure;
-      }
-      status.dataset.state = 'success';
-      status.textContent = contactForm.dataset.success;
-      contactForm.reset();
-    } catch (error) {
-      status.dataset.state = 'error';
-      status.textContent = `${error.publicMessage || contactForm.dataset.error} ${contactForm.dataset.retained}`;
-    } finally {
-      window.clearTimeout(timeout);
-      button.disabled = false;
-    }
-  });
-
   const menu = document.querySelector('.menu-toggle');
   const navigation = document.querySelector('#portfolio-navigation');
   const closeMenu = () => {

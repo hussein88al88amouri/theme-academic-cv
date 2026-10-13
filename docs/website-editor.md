@@ -1,58 +1,23 @@
-# Editing the research portfolio in your browser
+# Website development and browser editing
 
-For everyday editing, use [Browser editing guide](browser-editing.md).
+For everyday editing, open **https://hussein-el-amouri.netlify.app/admin/** or click **Edit website**. Follow [Browser editing guide](browser-editing.md) for all dashboard controls and the one-time GitHub OAuth setup. You do not need GitHub's file editor for routine changes.
 
-**Current contact delivery:** the form now uses a Netlify function and Brevo for automatic To/BCC email. Follow [Brevo setup](brevo-email-setup.md). Earlier Netlify Forms instructions below describe the previous delivery mechanism and are superseded by that guide.
+## Contact
 
-The website includes a Decap CMS dashboard at `/admin/`. It edits the existing GitHub repository and uses Netlify to rebuild the site. You do not need to edit code for routine content updates.
+Contact is a direct `mailto:alamourihusein@gmail.com` link by default. It opens the visitor's configured mail application. The website does not send email automatically and does not require email-service credentials or a database.
 
-These changes must first be deployed from `hussein88al88amouri/theme-academic-cv` to the existing Netlify site. The cloud environment's Publish action saves the development environment; it does not deploy the website.
+Message boxes are hidden. If you later want a website form, enable **Homepage & career → Enable optional Netlify contact form**. This uses Netlify Forms exclusively. In the existing Netlify project, enable form detection, redeploy, and configure notifications for `research-contact`. Then test a real submission and receipt. The thank-you page is editable under **Archive & thank-you pages**. Netlify Forms configuration is separate from the editor's GitHub OAuth sign-in configuration.
 
-## One-time login setup (site owner)
+## Deploy to the existing Netlify address
 
-The dashboard uses GitHub authentication through Netlify's OAuth service. It does not depend on Netlify Identity or Git Gateway.
+1. Open the existing project for `hussein-el-amouri.netlify.app` in Netlify.
+2. Under **Project configuration → Build & deploy → Continuous deployment**, link `hussein88al88amouri/theme-academic-cv` and choose production branch `main`.
+3. Use build command `hugo --gc --minify`, publish directory `public`, and an empty base directory. The repository pins Hugo 0.119.0.
+4. Save, then trigger a production deploy, clearing the cache if necessary. Confirm the latest commit is published.
 
-1. In GitHub, open **Settings → Developer settings → OAuth Apps → New OAuth App**. Use the website URL `https://hussein-el-amouri.netlify.app` as the homepage and `https://api.netlify.com/auth/done` as the authorization callback URL.
-2. In the existing Netlify site's settings, find the **OAuth / Authentication providers** section (under access/security settings) and install the **GitHub** provider. Enter the OAuth app's client ID and client secret there, securely. Do not put the secret in the repository or send it in chat.
-3. Confirm Netlify is connected to this GitHub repository, its production branch is `main`, and automatic builds are enabled. The existing `netlify.toml` pins Hugo Extended-compatible version 0.119.0 and publishes `public/`.
-4. Deploy the website changes. Visit `https://hussein-el-amouri.netlify.app/admin/` and choose **Login with GitHub**. Sign in with an account allowed to write to the repository. Public visitors cannot edit content just because they can open `/admin/`.
-5. Save a small change as a draft, review it, and publish it through the dashboard. Confirm the corresponding GitHub change and a successful Netlify deployment before considering remote publishing verified.
-
-If login fails, check the Netlify GitHub OAuth provider and callback URL first. If publishing fails, check repository permissions and branch protections. A protected `main` branch may require you to merge the editor's pull request in GitHub. GitHub OAuth credentials belong in Netlify settings; no new environment secret is required for local development.
-
-## What you can edit
-
-| Dashboard section | Content |
-| --- | --- |
-| Homepage & career | Main headline, introduction, research section introduction, CV PDF, career history, teaching, supervision, contact details, form visibility, Medium profile link |
-| Biography & education | Name, role, affiliation, portrait, full biography, research interests, education, tools, social links |
-| Research projects | Project title, description, topics, status, links, and full project text |
-| Publications | Title, authors, venue, date, publication type, DOI, abstract, PDF/code links, and full text |
-| Notes & ideas | Blog posts hosted on this website, or links to essays published on Medium or another website |
-
-**Save** creates an editorial draft rather than updating the public site immediately. Review the entry, mark it ready, and use **Publish** when you want it to go live. Publishing updates GitHub; the public website changes after Netlify finishes its deployment. The **Hide from public site** checkbox is separate: use it only if you want an entry to remain hidden even after it is published to GitHub.
-
-### Updating your CV
-
-Open **Homepage & career**, find **CV PDF**, and upload a replacement PDF or choose one from the media library. Save and publish the change. The `/cv/` route always opens the PDF selected here, so the homepage, navigation, and profile links remain consistent even when the uploaded filename changes.
-
-### Adding publications
-
-Choose **Publications → New**. Add the title, venue, date, type, and known authors. Add a DOI as `10.…` or a full `https://doi.org/…` URL. PDF and code links are optional. If only the publication year is known, enter January 1 of that year for sorting and select **Date accuracy → year**; the public page will show only the year. Keep manuscripts under revision clearly identified as such. Do not label them as accepted or published.
-
-### Writing here and on Medium
-
-For a full post on this website, create a **Notes & ideas** entry and use the main text editor. Leave **Medium / external article URL** empty.
-
-For an essay already on Medium, add its title, date, short description, and full Medium URL. The homepage and notes archive link directly to that essay. An optional Medium profile URL in **Homepage & career** adds a profile link to the homepage. There is no automatic Medium synchronization or import; you control which essays appear.
-
-### Contact messages
-
-The homepage includes a Netlify form named `research-contact`, plus a direct email link. After deployment, confirm the form appears in Netlify's Forms area, enable form handling if required, and configure email notifications there. Test a real submission and confirm receipt. Local tests validate form fields and markup; they cannot establish live Netlify delivery. You can hide the form in the dashboard and keep the email link.
+GitHub Pages is a secondary build; its deployment does not update Netlify. The browser editor and an optional contact form use the primary Netlify address.
 
 ## Developer validation
-
-Use the existing isolated checkout; no worktree is needed. Activate the cloud toolchain:
 
 ```bash
 export PATH=/workspace/.cloud-tools/bin:/workspace/.cloud-tools/go/bin:$PATH
@@ -64,45 +29,12 @@ hugo --minify --environment production --destination /workspace/.cloud-tools/por
 hugo server --bind 127.0.0.1 --port 1313 --baseURL http://127.0.0.1:1313/ --disableFastRender
 ```
 
-Check the homepage, search and year filters, empty search results, mobile menu, keyboard access, reduced motion, `/cv/`, the selected PDF, publication/project pages, `/post/`, and `/admin/`. All publications remain available when JavaScript is disabled. Browser tests of authenticated editing can use Decap's local proxy against a temporary copy of the repository; do not enable that proxy in the deployed CMS configuration.
-
-Template demo posts, projects, talks, slides, and the placeholder author are preserved as drafts. The actual portfolio includes four published papers; the vocoder paper uses 2021 to match its Interspeech 2021 venue and DOI, although the supplied CV lists 2020. Its precise publication month is not asserted.
-
-Browser smoke checks are saved in `tests/portfolio_smoke.py` and require Python Playwright and Chromium. With the development server running:
+Browser checks require Python Playwright and Chromium:
 
 ```bash
 python3 tests/portfolio_smoke.py --base-url http://127.0.0.1:1313
 ```
 
-If CDN access is unavailable in the test environment, provide a verified Decap 3.16.3 bundle with `--cms-bundle /path/to/decap-cms.js`. Screenshots are saved under `/tmp/portfolio-smoke` by default. The CMS login screen is checked; remote GitHub authorization and Netlify publishing require the owner’s one-time setup and a subsequent live test.
+Use `--cms-bundle /path/to/decap-cms.js` with a verified Decap 3.16.3 bundle if CDN access is unavailable. Tests cover content, CV, project diagrams, direct contact, responsive navigation, and the generated OAuth login URL. They do not establish live account authorization or actual Netlify form delivery.
 
-## Approved portfolio update
-
-The homepage now uses the approved headings and six research interests. It includes all six research/supervision projects. The portrait uses original proportions and colors by default; **Homepage & career → Portrait proportions** can optionally select a square crop. The About heading, portrait caption, LinkedIn writing link, and Medium link are also editable there. The Medium button appears after a real profile URL is provided; no placeholder account is published.
-
-CV buttons open the selected PDF directly. The `/cv/` compatibility route and internal Markdown/profile/menu links also preserve the GitHub Pages project subpath.
-
-The contact form asks for visitor email, subject, and message, with an optional name. It submits to the Netlify URL configured in **Contact form submission URL**. On the Netlify host, it shows submission success or failure; failure preserves the visitor's text. On other hosts it uses a normal browser submission to Netlify, avoiding cross-origin AJAX restrictions.
-
-**Required owner setup for receiving email:** in the Netlify project, enable Forms/form detection, then redeploy so the `research-contact` form is registered. Under that form's notifications, add an email notification to `alamourihusein@gmail.com`. Submit one real test message on the deployed site and confirm both the stored submission and email receipt. The code does not send mail directly, and no database is needed. Browser tests use a controlled receiver to verify encoding, error handling, retry, and success; they do not establish actual Netlify email delivery.
-
-## Replacing the old site at the existing Netlify address
-
-GitHub Pages deployment does not update Netlify. To replace the site at **https://hussein-el-amouri.netlify.app/**, configure the existing Netlify project rather than creating a new one:
-
-1. Sign in to Netlify and select the project serving `hussein-el-amouri.netlify.app`.
-2. Open **Project configuration → Build & deploy → Continuous deployment**.
-3. Under **Repository**, choose **Link repository** (or **Change repository** if a different repository is connected).
-4. Select GitHub and authorize access to `hussein88al88amouri/theme-academic-cv` if needed.
-5. Select that repository and production branch `main`.
-6. Use build command `hugo --gc --minify`, publish directory `public`, and leave the base directory empty. The checked-in `netlify.toml` pins Hugo 0.119.0; the site configuration sets the existing Netlify address.
-7. Save the settings, then open **Deploys → Trigger deploy → Clear cache and deploy site**.
-8. Confirm the deployment uses the latest commit on `main`, finishes successfully, and becomes the **published production deploy**. If deploys are locked, unlock production publishing first. Subsequent pushes to `main` should deploy automatically.
-9. Test the homepage, CV PDF, a publication page, and a real contact message at the Netlify address. Enable form detection and email notifications as described above.
-
-The shared header, footer, fonts, colors, and article styles now apply to publication, project, author, post, and archive pages. The primary address is editable in **Homepage & career** and is used for canonical metadata, including when the site is also built as a GitHub Pages preview. The circular portrait and formal headline are also editable in the dashboard.
-
-Local builds and tests do not prove that Netlify's project has been linked or that a production deployment has completed. Repository access does not supply Netlify account access.
-
-
-Each of the six projects now includes a conceptual SVG diagram, an accessible description, and a caption distinguishing the illustration from experimental results. In **Research projects**, you can replace the figure and edit its description/caption. Existing research GIFs and photographs remain available below the main content.
+The public site and editor store content in the existing repository. Template demos remain drafts. Conceptual project figures have editable captions/descriptions and can be replaced through the dashboard.
